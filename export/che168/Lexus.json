@@ -1,0 +1,44 @@
+[
+  {
+    "name": "RC F 2015 F 5.0L \n2016",
+    "brand": "Lexus",
+    "year": "2016",
+    "price": 3088800,
+    "price_yuan": 25.74,
+    "yuan_to_rub": 12,
+    "mileage": "30 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g31/M02/2B/62/400x300_c42_autohomecar__ChxoHWe949iAb4ERAAlkXuzYsJE886.jpg"
+  },
+  {
+    "name": "LS 2021 500h \n2021",
+    "brand": "Lexus",
+    "year": "2021",
+    "price": 2044800,
+    "price_yuan": 17.04,
+    "yuan_to_rub": 12,
+    "mileage": "18 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g31/M04/1D/94/400x300_c42_autohomecar__ChtlyGgAtrCAX2gBAA0XSZo8C9I953.jpg"
+  },
+  {
+    "name": "CT 2020 CT200h  \n\n2020",
+    "brand": "Lexus",
+    "year": "2020",
+    "price": 452400,
+    "price_yuan": 3.77,
+    "yuan_to_rub": 12,
+    "mileage": "21 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g31/M06/D8/A7/400x300_c42_autohomecar__ChxoHmgV7u2ASdB_AAzyGojNUGU051.jpg"
+  }
+]

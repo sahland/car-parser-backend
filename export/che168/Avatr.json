@@ -1,0 +1,30 @@
+[
+  {
+    "name": "06 2025 Max\n2025",
+    "brand": "Avatr",
+    "year": "2025",
+    "price": 718800,
+    "price_yuan": 5.99,
+    "yuan_to_rub": 12,
+    "mileage": "1 300 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g32/M0B/01/B2/400x300_c42_autohomecar__Chtk2WgJ3eGAe_r1AAPaCR0WRes892.jpg"
+  },
+  {
+    "name": "07 2024 Max\n2025",
+    "brand": "Avatr",
+    "year": "2025",
+    "price": 646800,
+    "price_yuan": 5.39,
+    "yuan_to_rub": 12,
+    "mileage": "2 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g30/M04/82/7F/400x300_c42_autohomecar__Chtk2GgesVCAbzCLAAUdDizC0pM272.jpg"
+  }
+]
