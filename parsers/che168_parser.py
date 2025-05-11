@@ -15,7 +15,7 @@ from utils.currency import get_cny_to_rub_rate
 def parse_che168_selenium():
     driver = get_driver(headless=False)
     driver.get("https://m.che168.com/beijing/list/")
-    input("⏳ Прокрути вручную и нажми Enter для продолжения...")
+    input("⏳ Scroll manually and press Enter to continue...")
 
     try:
         WebDriverWait(driver, 20).until(
@@ -39,7 +39,7 @@ def parse_che168_selenium():
 
             name_raw = clean_name(text)
             name = clean_display_name(name_raw)
-            brand = extract_brand(text)
+            brand = extract_brand(text, source="che168")
 
             parts = text.split("\n")
             mileage_block = next((part for part in parts if "/" in part), "")
