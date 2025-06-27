@@ -1,0 +1,44 @@
+[
+  {
+    "name": "RAM Trucks 2017 5.7L \n2017",
+    "brand": "RAM",
+    "year": "2017",
+    "price": 1560000,
+    "price_yuan": 13.0,
+    "yuan_to_rub": 12,
+    "mileage": "130 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g26/M09/B6/FE/400x300_c42_autohomecar__Chxkjmgi27OAdZlDAAvvEC1uB44608.jpg"
+  },
+  {
+    "name": "RAM Trucks 2020 5.7L \n2020",
+    "brand": "RAM",
+    "year": "2020",
+    "price": 1200000,
+    "price_yuan": 10.0,
+    "yuan_to_rub": 12,
+    "mileage": "100 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g32/M04/94/8C/400x300_c42_autohomecar__ChxkPWg3ztaAKtcYAAu6iTjtcjY990.jpg"
+  },
+  {
+    "name": "RAM Trucks 2022 5.7L \n\n2024",
+    "brand": "RAM",
+    "year": "2024",
+    "price": 96000,
+    "price_yuan": 0.8,
+    "yuan_to_rub": 12,
+    "mileage": "8 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g30/M04/1E/42/400x300_c42_autohomecar__CjIFU2gymJ6ABA8BAAGScu0jqsw610.jpg"
+  }
+]

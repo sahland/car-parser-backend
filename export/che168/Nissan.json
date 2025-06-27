@@ -1,16 +1,16 @@
 [
   {
-    "name": "370Z 2013 3.7L Coupe\n2014",
+    "name": "GT-R 2023 3.8T \n2024",
     "brand": "Nissan",
-    "year": "2014",
-    "price": 3216000,
-    "price_yuan": 26.8,
+    "year": "2024",
+    "price": 192000,
+    "price_yuan": 1.6,
     "yuan_to_rub": 12,
-    "mileage": "25 000 км",
+    "mileage": "16 000 км",
     "fuel_type": "—",
     "power": "—",
     "drive": "—",
     "engine_volume": "2.0",
-    "image": "https://2sc2.autoimg.cn/escimg/auto/g31/M04/92/B6/400x300_c42_autohomecar__ChxoHWf4x2qAcbzRAAro0-gwRjQ929.jpg"
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g30/M0B/DD/31/400x300_c42_autohomecar__ChxknGfjk4GAXHSaAAjGZlT1nHo093.jpg"
   }
 ]

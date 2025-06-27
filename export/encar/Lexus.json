@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Lexus rx350h 5th generation",
+    "brand": "Lexus",
+    "year": "2024",
+    "price": 5873000,
+    "price_krw": 8390,
+    "krw_to_rub": 0.07,
+    "mileage": "· 17,995 км",
+    "fuel_type": "· Бензин+электричество",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture01/pic3911/39119344_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250226044821"
+  },
+  {
+    "name": "Lexus ES300H 7th generation",
+    "brand": "Lexus",
+    "year": "2018",
+    "price": 2723000,
+    "price_krw": 3890,
+    "krw_to_rub": 0.07,
+    "mileage": "· 39,852 км",
+    "fuel_type": "· Бензин+электричество",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture01/pic3991/39912927_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250620081535"
+  },
+  {
+    "name": "Lexus rx350h 5th generation",
+    "brand": "Lexus",
+    "year": "2024",
+    "price": 5873000,
+    "price_krw": 8390,
+    "krw_to_rub": 0.07,
+    "mileage": "· 17,995 км",
+    "fuel_type": "· Бензин+электричество",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture01/pic3911/39119344_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250226044821"
+  }
+]

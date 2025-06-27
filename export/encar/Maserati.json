@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Maserati Levante",
+    "brand": "Maserati",
+    "year": "2018",
+    "price": 2233000,
+    "price_krw": 3190,
+    "krw_to_rub": 0.07,
+    "mileage": "· 85,525 км",
+    "fuel_type": "· Дизель",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture04/pic3884/38844137_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250108075651"
+  },
+  {
+    "name": "Maserati Levante",
+    "brand": "Maserati",
+    "year": "2018",
+    "price": 2233000,
+    "price_krw": 3190,
+    "krw_to_rub": 0.07,
+    "mileage": "· 85,525 км",
+    "fuel_type": "· Дизель",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture04/pic3884/38844137_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250108075651"
+  }
+]

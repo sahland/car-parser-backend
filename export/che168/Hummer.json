@@ -1,0 +1,44 @@
+[
+  {
+    "name": "H1 2004 6.5L \n2012",
+    "brand": "Hummer",
+    "year": "2012",
+    "price": 324000,
+    "price_yuan": 2.7,
+    "yuan_to_rub": 12,
+    "mileage": "27 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g31/M06/CA/01/400x300_c42_autohomecar__ChtlyGgTRn6ANKT7AA3YVLhP9pU745.jpg"
+  },
+  {
+    "name": "EV 2024 \n2024",
+    "brand": "Hummer",
+    "year": "2024",
+    "price": 216000,
+    "price_yuan": 1.8,
+    "yuan_to_rub": 12,
+    "mileage": "18 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g26/M01/58/80/400x300_c42_autohomecar__ChtlxWg2uh-AC3gqAAdqKPR0xvo184.jpg"
+  },
+  {
+    "name": "H2 2024",
+    "brand": "Hummer",
+    "year": "—",
+    "price": 1200,
+    "price_yuan": 0.01,
+    "yuan_to_rub": 12,
+    "mileage": "—",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g30/M0A/71/BA/400x300_c42_autohomecar__Chtk2GgYJj-AOwOMAAhsHNp8aSQ270.jpg"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "name": "마세라티",
+    "brand": "Maserati",
+    "year": "2017",
+    "price": 1435000,
+    "price_krw": 2050,
+    "krw_to_rub": 0.07,
+    "mileage": "045",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "3.0",
+    "image": "https://img.kbchachacha.com/IMG/carimg/l/img05/img2695/26957900_36076409582967188.jpeg?width=720"
+  }
+]

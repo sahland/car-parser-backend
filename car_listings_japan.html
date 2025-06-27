@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог автомобилей прямиком из Японии</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --bg: #292929;
+            --card-bg: #222;
+            --hover-bg: #2a2a2a;
+            --text: #fff;
+            --subtext: #aaa;
+            --accent: #ff3b3f;
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px 10px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .selector-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        select {
+            padding: 12px 16px;
+            font-size: 16px;
+            border-radius: var(--radius);
+            background: var(--card-bg);
+            color: var(--text);
+            border: 2px solid var(--accent);
+            transition: 0.3s;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(255, 59, 63, 0.5);
+        }
+
+        .model-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+            padding: 0 20px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .model-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        .model-card:hover {
+            background: var(--hover-bg);
+            transform: translateY(-4px);
+        }
+
+        .model-header {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+
+        .model-price {
+            font-size: 16px;
+            color: var(--subtext);
+        }
+
+        @media (max-width: 600px) {
+            .model-list {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Каталог автомобилей прямиком из Японии</h1>
+        <div class="selector-container">
+            <select id="brandSelect" onchange="filterModels()" autofocus>
+                <option value="TOYOTA">TOYOTA</option>
+                <option value="NISSAN">NISSAN</option>
+                <option value="MAZDA">MAZDA</option>
+                <option value="MITSUBISHI">MITSUBISHI</option>
+                <option value="HONDA">HONDA</option>
+                <option value="SUZUKI">SUZUKI</option>
+                <option value="SUBARU">SUBARU</option>
+                <option value="ISUZU">ISUZU</option>
+                <option value="DAIHATSU">DAIHATSU</option>
+                <option value="MITSUOKA">MITSUOKA</option>
+                <option value="LEXUS">LEXUS</option>
+                <option value="ALFAROMEO">ALFAROMEO</option>
+                <option value="ASTON MARTIN">ASTON MARTIN</option>
+                <option value="AUDI">AUDI</option>
+                <option value="BENTLEY">BENTLEY</option>
+                <option value="BMW">BMW</option>
+                <option value="BMW ALPINA">BMW ALPINA</option>
+                <option value="CADILLAC">CADILLAC</option>
+                <option value="CHEVROLET">CHEVROLET</option>
+                <option value="CHRYSLER">CHRYSLER</option>
+                <option value="CITROEN">CITROEN</option>
+                <option value="DODGE">DODGE</option>
+                <option value="FERRARI">FERRARI</option>
+                <option value="FIAT">FIAT</option>
+                <option value="FORD">FORD</option>
+                <option value="GENESIS">GENESIS</option>
+                <option value="HYUNDAI">HYUNDAI</option>
+                <option value="KIA">KIA</option>
+                <option value="TESLA">TESLA</option>
+                <option value="VOLKSWAGEN">VOLKSWAGEN</option>
+                <option value="VOLVO">VOLVO</option>
+                <option value="MERCEDES BENZ">MERCEDES BENZ</option>
+            </select>
+        </div>
+    </header>
+    <main>
+        <div id="modelContainer" class="model-list"></div>
+    </main>
+
+    <script>
+        const carData = [{"brand": "TOYOTA", "models": [{"name": "Aqua", "avg_price_rub": 700000}, {"name": "Prius", "avg_price_rub": 950000}, {"name": "Alphard", "avg_price_rub": 2400000}, {"name": "Vitz", "avg_price_rub": 600000}, {"name": "Crown", "avg_price_rub": 1300000}, {"name": "Land Cruiser Prado", "avg_price_rub": 3500000}, {"name": "Harrier", "avg_price_rub": 2100000}, {"name": "Corolla Fielder", "avg_price_rub": 800000}, {"name": "Sienta", "avg_price_rub": 950000}, {"name": "Estima", "avg_price_rub": 1100000}, {"name": "Camry", "avg_price_rub": 1400000}, {"name": "Hilux", "avg_price_rub": 2500000}, {"name": "Mark X", "avg_price_rub": 1200000}, {"name": "Raize", "avg_price_rub": 1000000}, {"name": "Probox", "avg_price_rub": 850000}, {"name": "Passo", "avg_price_rub": 650000}, {"name": "Pixis", "avg_price_rub": 550000}, {"name": "Noah", "avg_price_rub": 1200000}, {"name": "Voxy", "avg_price_rub": 1250000}, {"name": "Town Ace", "avg_price_rub": 900000}, {"name": "HiAce", "avg_price_rub": 1300000}]}, {"brand": "NISSAN", "models": [{"name": "Note", "avg_price_rub": 750000}, {"name": "X-Trail", "avg_price_rub": 1400000}, {"name": "Serena", "avg_price_rub": 1200000}, {"name": "Skyline", "avg_price_rub": 1800000}, {"name": "Leaf", "avg_price_rub": 850000}, {"name": "Elgrand", "avg_price_rub": 1600000}, {"name": "March", "avg_price_rub": 580000}, {"name": "Juke", "avg_price_rub": 950000}, {"name": "NV350 Caravan", "avg_price_rub": 1300000}, {"name": "Dayz", "avg_price_rub": 650000}, {"name": "Bluebird Sylphy", "avg_price_rub": 750000}, {"name": "Fuga", "avg_price_rub": 1700000}, {"name": "Cube", "avg_price_rub": 720000}, {"name": "Wingroad", "avg_price_rub": 790000}, {"name": "Tiida", "avg_price_rub": 820000}]}, {"brand": "MAZDA", "models": [{"name": "Demio", "avg_price_rub": 700000}, {"name": "CX-5", "avg_price_rub": 1500000}, {"name": "Atenza", "avg_price_rub": 1100000}, {"name": "CX-3", "avg_price_rub": 1250000}, {"name": "Axela", "avg_price_rub": 950000}, {"name": "Bongo", "avg_price_rub": 650000}, {"name": "Scrum", "avg_price_rub": 600000}, {"name": "Roadster (MX-5)", "avg_price_rub": 1600000}, {"name": "CX-30", "avg_price_rub": 1350000}, {"name": "Familia", "avg_price_rub": 780000}, {"name": "MPV", "avg_price_rub": 1000000}]}, {"brand": "MITSUBISHI", "models": [{"name": "Outlander", "avg_price_rub": 1400000}, {"name": "Delica", "avg_price_rub": 1350000}, {"name": "Pajero", "avg_price_rub": 1700000}, {"name": "eK Wagon", "avg_price_rub": 500000}, {"name": "RVR", "avg_price_rub": 1100000}, {"name": "Minicab", "avg_price_rub": 480000}, {"name": "Mirage", "avg_price_rub": 650000}, {"name": "Canter", "avg_price_rub": 2000000}, {"name": "i-MiEV", "avg_price_rub": 850000}, {"name": "Lancer", "avg_price_rub": 950000}, {"name": "Triton", "avg_price_rub": 1900000}]}, {"brand": "HONDA", "models": [{"name": "Fit", "avg_price_rub": 700000}, {"name": "Vezel", "avg_price_rub": 1200000}, {"name": "N-Box", "avg_price_rub": 750000}, {"name": "Stepwgn", "avg_price_rub": 1300000}, {"name": "Freed", "avg_price_rub": 1100000}, {"name": "Shuttle", "avg_price_rub": 950000}, {"name": "Accord", "avg_price_rub": 1800000}, {"name": "Civic", "avg_price_rub": 1700000}, {"name": "Odyssey", "avg_price_rub": 1600000}, {"name": "N-WGN", "avg_price_rub": 690000}, {"name": "CR-V", "avg_price_rub": 1900000}, {"name": "Insight", "avg_price_rub": 1300000}]}, {"brand": "SUZUKI", "models": [{"name": "Swift", "avg_price_rub": 650000}, {"name": "Spacia", "avg_price_rub": 800000}, {"name": "Alto", "avg_price_rub": 580000}, {"name": "Wagon R", "avg_price_rub": 600000}, {"name": "Jimny", "avg_price_rub": 1500000}, {"name": "Every", "avg_price_rub": 700000}, {"name": "Hustler", "avg_price_rub": 900000}, {"name": "Carry", "avg_price_rub": 750000}, {"name": "Lapin", "avg_price_rub": 650000}, {"name": "Solio", "avg_price_rub": 850000}]}, {"brand": "SUBARU", "models": [{"name": "Impreza", "avg_price_rub": 850000}, {"name": "Forester", "avg_price_rub": 1600000}, {"name": "Legacy", "avg_price_rub": 1400000}, {"name": "Levorg", "avg_price_rub": 1550000}, {"name": "XV", "avg_price_rub": 1450000}, {"name": "Outback", "avg_price_rub": 2000000}, {"name": "Sambar", "avg_price_rub": 620000}, {"name": "Rex", "avg_price_rub": 700000}, {"name": "BRZ", "avg_price_rub": 2200000}, {"name": "Dias Wagon", "avg_price_rub": 640000}]}, {"brand": "ISUZU", "models": [{"name": "Elf", "avg_price_rub": 1600000}, {"name": "Giga", "avg_price_rub": 4500000}, {"name": "Forward", "avg_price_rub": 2500000}, {"name": "Como", "avg_price_rub": 1200000}, {"name": "D-Max", "avg_price_rub": 2100000}]}, {"brand": "DAIHATSU", "models": [{"name": "Tanto", "avg_price_rub": 650000}, {"name": "Move", "avg_price_rub": 600000}, {"name": "Cast", "avg_price_rub": 680000}, {"name": "Mira", "avg_price_rub": 550000}, {"name": "Hijet", "avg_price_rub": 700000}, {"name": "Rocky", "avg_price_rub": 1100000}, {"name": "Atrai", "avg_price_rub": 750000}, {"name": "Wake", "avg_price_rub": 770000}, {"name": "Copen", "avg_price_rub": 1200000}, {"name": "Thor", "avg_price_rub": 800000}]}, {"brand": "MITSUOKA", "models": [{"name": "Viewt", "avg_price_rub": 1200000}, {"name": "Galue", "avg_price_rub": 1800000}, {"name": "Himiko", "avg_price_rub": 3500000}, {"name": "Ryugi", "avg_price_rub": 1400000}, {"name": "Rock Star", "avg_price_rub": 3600000}, {"name": "Buddy", "avg_price_rub": 3900000}, {"name": "Le-Seyde", "avg_price_rub": 4100000}]}, {"brand": "LEXUS", "models": [{"name": "RX", "avg_price_rub": 3200000}, {"name": "NX", "avg_price_rub": 2800000}, {"name": "ES", "avg_price_rub": 2700000}, {"name": "LX", "avg_price_rub": 6800000}, {"name": "UX", "avg_price_rub": 2300000}, {"name": "LS", "avg_price_rub": 6400000}, {"name": "IS", "avg_price_rub": 2500000}, {"name": "RC", "avg_price_rub": 3500000}, {"name": "GX", "avg_price_rub": 5200000}, {"name": "LC", "avg_price_rub": 8900000}, {"name": "RZ", "avg_price_rub": 4500000}]}, {"brand": "ALFAROMEO", "models": [{"name": "Giulia", "avg_price_rub": 2700000}, {"name": "Stelvio", "avg_price_rub": 3100000}, {"name": "MiTo", "avg_price_rub": 1500000}, {"name": "Giulietta", "avg_price_rub": 1700000}, {"name": "4C", "avg_price_rub": 5000000}]}, {"brand": "ASTON MARTIN", "models": [{"name": "Vantage", "avg_price_rub": 8500000}, {"name": "DB11", "avg_price_rub": 12000000}, {"name": "DBX", "avg_price_rub": 15000000}, {"name": "Rapide", "avg_price_rub": 10000000}, {"name": "Valhalla", "avg_price_rub": 20000000}]}, {"brand": "AUDI", "models": [{"name": "A3", "avg_price_rub": 1500000}, {"name": "A4", "avg_price_rub": 1800000}, {"name": "A6", "avg_price_rub": 2500000}, {"name": "A8", "avg_price_rub": 4000000}, {"name": "Q3", "avg_price_rub": 2100000}, {"name": "Q5", "avg_price_rub": 2600000}, {"name": "Q7", "avg_price_rub": 3700000}, {"name": "e-tron", "avg_price_rub": 4300000}]}, {"brand": "BENTLEY", "models": [{"name": "Continental GT", "avg_price_rub": 12000000}, {"name": "Flying Spur", "avg_price_rub": 14000000}, {"name": "Bentayga", "avg_price_rub": 16000000}, {"name": "Mulsanne", "avg_price_rub": 17000000}]}, {"brand": "BMW", "models": [{"name": "1 Series", "avg_price_rub": 1600000}, {"name": "2 Series", "avg_price_rub": 1700000}, {"name": "3 Series", "avg_price_rub": 1900000}, {"name": "4 Series", "avg_price_rub": 2100000}, {"name": "5 Series", "avg_price_rub": 2600000}, {"name": "7 Series", "avg_price_rub": 4800000}, {"name": "X1", "avg_price_rub": 2000000}, {"name": "X3", "avg_price_rub": 2900000}, {"name": "X5", "avg_price_rub": 3400000}, {"name": "iX", "avg_price_rub": 5500000}]}, {"brand": "BMW ALPINA", "models": [{"name": "B3", "avg_price_rub": 6000000}, {"name": "B5", "avg_price_rub": 7200000}, {"name": "XD3", "avg_price_rub": 6800000}, {"name": "D3 S", "avg_price_rub": 6500000}, {"name": "B6", "avg_price_rub": 9000000}, {"name": "XB7", "avg_price_rub": 12000000}]}, {"brand": "CADILLAC", "models": [{"name": "Escalade", "avg_price_rub": 5800000}, {"name": "CTS", "avg_price_rub": 2700000}, {"name": "XT5", "avg_price_rub": 3200000}, {"name": "CT6", "avg_price_rub": 3900000}, {"name": "XT6", "avg_price_rub": 4000000}, {"name": "Lyriq", "avg_price_rub": 5200000}]}, {"brand": "CHEVROLET", "models": [{"name": "Camaro", "avg_price_rub": 3000000}, {"name": "Corvette", "avg_price_rub": 5800000}, {"name": "Tahoe", "avg_price_rub": 4500000}, {"name": "Malibu", "avg_price_rub": 2100000}, {"name": "Traverse", "avg_price_rub": 3300000}, {"name": "Trailblazer", "avg_price_rub": 2400000}, {"name": "Equinox", "avg_price_rub": 2200000}]}, {"brand": "CHRYSLER", "models": [{"name": "300C", "avg_price_rub": 2200000}, {"name": "Pacifica", "avg_price_rub": 2900000}, {"name": "Voyager", "avg_price_rub": 2600000}, {"name": "Aspen", "avg_price_rub": 2800000}]}, {"brand": "CITROEN", "models": [{"name": "C3", "avg_price_rub": 900000}, {"name": "C4", "avg_price_rub": 1100000}, {"name": "C5 Aircross", "avg_price_rub": 1600000}, {"name": "Berlingo", "avg_price_rub": 1400000}, {"name": "C-Elysée", "avg_price_rub": 1000000}, {"name": "Spacetourer", "avg_price_rub": 1900000}]}, {"brand": "DODGE", "models": [{"name": "Challenger", "avg_price_rub": 3700000}, {"name": "Charger", "avg_price_rub": 3500000}, {"name": "Durango", "avg_price_rub": 3200000}, {"name": "Journey", "avg_price_rub": 2300000}, {"name": "Ram 1500", "avg_price_rub": 4700000}, {"name": "Nitro", "avg_price_rub": 2000000}]}, {"brand": "FERRARI", "models": [{"name": "488", "avg_price_rub": 18000000}, {"name": "Roma", "avg_price_rub": 22000000}, {"name": "Portofino", "avg_price_rub": 21000000}, {"name": "F8 Tributo", "avg_price_rub": 25000000}, {"name": "SF90 Stradale", "avg_price_rub": 34000000}, {"name": "812 Superfast", "avg_price_rub": 33000000}, {"name": "296 GTB", "avg_price_rub": 31000000}]}, {"brand": "FIAT", "models": [{"name": "500", "avg_price_rub": 900000}, {"name": "Panda", "avg_price_rub": 850000}, {"name": "Tipo", "avg_price_rub": 1200000}, {"name": "Doblo", "avg_price_rub": 1150000}, {"name": "500X", "avg_price_rub": 1300000}, {"name": "Fiorino", "avg_price_rub": 1000000}]}, {"brand": "FORD", "models": [{"name": "Focus", "avg_price_rub": 1300000}, {"name": "Mustang", "avg_price_rub": 3200000}, {"name": "Explorer", "avg_price_rub": 2800000}, {"name": "Fusion", "avg_price_rub": 1500000}, {"name": "Escape", "avg_price_rub": 1700000}, {"name": "F-150", "avg_price_rub": 3500000}, {"name": "Edge", "avg_price_rub": 2400000}, {"name": "Ranger", "avg_price_rub": 2300000}]}, {"brand": "GENESIS", "models": [{"name": "G70", "avg_price_rub": 2700000}, {"name": "G80", "avg_price_rub": 3200000}, {"name": "G90", "avg_price_rub": 4500000}, {"name": "GV70", "avg_price_rub": 3300000}, {"name": "GV80", "avg_price_rub": 4200000}, {"name": "GV60", "avg_price_rub": 3900000}]}, {"brand": "HYUNDAI", "models": [{"name": "Sonata", "avg_price_rub": 1300000}, {"name": "Santa Fe", "avg_price_rub": 1800000}, {"name": "Elantra", "avg_price_rub": 1100000}, {"name": "Tucson", "avg_price_rub": 1700000}, {"name": "Palisade", "avg_price_rub": 3200000}, {"name": "Creta", "avg_price_rub": 1200000}, {"name": "Staria", "avg_price_rub": 2900000}, {"name": "Kona", "avg_price_rub": 1600000}]}, {"brand": "KIA", "models": [{"name": "K5", "avg_price_rub": 1200000}, {"name": "Sportage", "avg_price_rub": 1700000}, {"name": "Sorento", "avg_price_rub": 2200000}, {"name": "Ceed", "avg_price_rub": 1100000}, {"name": "Stinger", "avg_price_rub": 2900000}, {"name": "Seltos", "avg_price_rub": 1500000}, {"name": "Mohave", "avg_price_rub": 3300000}, {"name": "Carnival", "avg_price_rub": 2800000}]}, {"brand": "TESLA", "models": [{"name": "Model 3", "avg_price_rub": 3300000}, {"name": "Model Y", "avg_price_rub": 3900000}, {"name": "Model S", "avg_price_rub": 6700000}, {"name": "Model X", "avg_price_rub": 7500000}, {"name": "Cybertruck", "avg_price_rub": 5800000}, {"name": "Roadster", "avg_price_rub": 9500000}]}, {"brand": "VOLKSWAGEN", "models": [{"name": "Golf", "avg_price_rub": 1200000}, {"name": "Passat", "avg_price_rub": 1400000}, {"name": "Tiguan", "avg_price_rub": 2100000}, {"name": "Jetta", "avg_price_rub": 1000000}, {"name": "Touareg", "avg_price_rub": 3500000}, {"name": "Arteon", "avg_price_rub": 2300000}, {"name": "T-Cross", "avg_price_rub": 1600000}, {"name": "ID.4", "avg_price_rub": 3300000}]}, {"brand": "VOLVO", "models": [{"name": "XC60", "avg_price_rub": 2700000}, {"name": "XC90", "avg_price_rub": 3900000}, {"name": "S60", "avg_price_rub": 2300000}, {"name": "V60", "avg_price_rub": 2500000}, {"name": "XC40", "avg_price_rub": 2200000}, {"name": "C40 Recharge", "avg_price_rub": 3600000}]}, {"brand": "MERCEDES BENZ", "models": [{"name": "A-Class", "avg_price_rub": 1800000}, {"name": "B-Class", "avg_price_rub": 1600000}, {"name": "C-Class", "avg_price_rub": 2200000}, {"name": "E-Class", "avg_price_rub": 2800000}, {"name": "S-Class", "avg_price_rub": 6000000}, {"name": "GLA", "avg_price_rub": 2400000}, {"name": "GLC", "avg_price_rub": 3200000}, {"name": "GLE", "avg_price_rub": 4500000}, {"name": "GLS", "avg_price_rub": 6500000}, {"name": "AMG GT", "avg_price_rub": 9000000}, {"name": "EQC", "avg_price_rub": 4300000}, {"name": "EQE", "avg_price_rub": 5200000}, {"name": "EQA", "avg_price_rub": 3900000}]}];
+
+        function formatPrice(price) {
+            return price.toLocaleString("ru-RU") + " ₽";
+        }
+
+        function filterModels() {
+            const selectedBrand = document.getElementById("brandSelect").value;
+            const container = document.getElementById("modelContainer");
+            container.innerHTML = "";
+
+            const brand = carData.find(b => b.brand === selectedBrand);
+            if (!brand || !brand.models.length) {
+                container.innerHTML = "<p style='color: var(--subtext); text-align: center;'>Нет доступных моделей</p>";
+                return;
+            }
+
+            for (const model of brand.models) {
+                const card = document.createElement("div");
+                card.className = "model-card";
+                card.innerHTML = `
+                    <div class="model-header">${model.name}</div>
+                    <div class="model-price">от ${formatPrice(model.avg_price_rub)}</div>
+                `;
+                container.appendChild(card);
+            }
+        }
+
+        window.onload = filterModels;
+    </script>
+</body>
+</html>

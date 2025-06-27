@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Volkswagen New Tiguan",
+    "brand": "Volkswagen",
+    "year": "2013",
+    "price": 553000,
+    "price_krw": 790,
+    "krw_to_rub": 0.07,
+    "mileage": "· 160,030 км",
+    "fuel_type": "· Дизель",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture01/pic3981/39815633_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250610031743"
+  },
+  {
+    "name": "Volkswagen Zeta 7th generation",
+    "brand": "Volkswagen",
+    "year": "2021",
+    "price": 2058000,
+    "price_krw": 2940,
+    "krw_to_rub": 0.07,
+    "mileage": "· 22,625 км",
+    "fuel_type": "Бензин",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture06/pic3966/39669509_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250519073026"
+  },
+  {
+    "name": "Volkswagen Tiguan 2nd generation",
+    "brand": "Volkswagen",
+    "year": "2018",
+    "price": 1260000,
+    "price_krw": 1800,
+    "krw_to_rub": 0.07,
+    "mileage": "· 80,752 км",
+    "fuel_type": "· Дизель",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture03/pic3773/37734844_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250213091244"
+  }
+]

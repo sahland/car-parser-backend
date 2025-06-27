@@ -1,0 +1,16 @@
+[
+  {
+    "name": "랜드로버",
+    "brand": "Land Rover",
+    "year": "2017",
+    "price": 945000,
+    "price_krw": 1350,
+    "krw_to_rub": 0.07,
+    "mileage": "396",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://img.kbchachacha.com/IMG/carimg/l/img10/img2700/27001593_37198201679497839.jpeg?width=720"
+  }
+]

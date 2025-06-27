@@ -1,0 +1,30 @@
+[
+  {
+    "name": "링컨",
+    "brand": "Lincoln",
+    "year": "2021",
+    "price": 2729300,
+    "price_krw": 3899,
+    "krw_to_rub": 0.07,
+    "mileage": "936",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "3.0",
+    "image": "https://img.kbchachacha.com/IMG/carimg/l/img05/img2675/26756628_30647984730893959.jpeg?width=720"
+  },
+  {
+    "name": "링컨",
+    "brand": "Lincoln",
+    "year": "2016",
+    "price": 945000,
+    "price_krw": 1350,
+    "krw_to_rub": 0.07,
+    "mileage": "139",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "3.5",
+    "image": "https://img.kbchachacha.com/IMG/carimg/l/img07/img2687/26879578_34368948163859922.jpeg?width=720"
+  }
+]

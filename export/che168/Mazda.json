@@ -1,0 +1,44 @@
+[
+  {
+    "name": "CX-30 2022 2.0L \n2023",
+    "brand": "Mazda",
+    "year": "2023",
+    "price": 229200,
+    "price_yuan": 1.91,
+    "yuan_to_rub": 12,
+    "mileage": "19 100 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g32/M0B/40/94/640x480_c42_autohomecar__Chtk2WhdyaKAejVwAAKW6BF0m-Y325.jpg"
+  },
+  {
+    "name": "6 2015 2.0L \n2016",
+    "brand": "Mazda",
+    "year": "2016",
+    "price": 1320000,
+    "price_yuan": 11.0,
+    "yuan_to_rub": 12,
+    "mileage": "110 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g32/M05/3A/55/640x480_c42_autohomecar__Chtk2Whby7iAbpsrAAI3cl6f4M4640.jpg"
+  },
+  {
+    "name": "CX-50 2023 2.5L \n2023",
+    "brand": "Mazda",
+    "year": "2023",
+    "price": 301200,
+    "price_yuan": 2.51,
+    "yuan_to_rub": 12,
+    "mileage": "25 099 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g26/M01/A0/BE/640x480_c42_autohomecar__ChtlxWhLZUeAFFmWAAHNRz-s3h8242.jpg"
+  }
+]

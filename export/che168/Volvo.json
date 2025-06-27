@@ -1,30 +1,30 @@
 [
   {
-    "name": "XC40 2020 T3 \n2020",
+    "name": "XC40 2020 T4 \n2020",
     "brand": "Volvo",
     "year": "2020",
-    "price": 294000,
-    "price_yuan": 2.45,
+    "price": 909600,
+    "price_yuan": 7.58,
     "yuan_to_rub": 12,
-    "mileage": "45 000 км",
+    "mileage": "75 800 км",
     "fuel_type": "—",
     "power": "—",
     "drive": "—",
     "engine_volume": "2.0",
-    "image": "https://2sc2.autoimg.cn/escimg/auto/g31/M01/F7/9E/400x300_c42_autohomecar__ChxoHmgbDxGALg9QAA5d6zeA-l0011.jpg"
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g31/M06/F4/93/640x480_c42_autohomecar__ChxoHmhc48SAS4bZAArKMHkkroM588.jpg"
   },
   {
-    "name": "XC60 2021 T5 \n2020",
+    "name": "S90 2019 T5 \n2018",
     "brand": "Volvo",
-    "year": "2020",
-    "price": 477600,
-    "price_yuan": 3.98,
+    "year": "2018",
+    "price": 1083600,
+    "price_yuan": 9.03,
     "yuan_to_rub": 12,
-    "mileage": "83 000 км",
+    "mileage": "90 300 км",
     "fuel_type": "—",
     "power": "—",
     "drive": "—",
     "engine_volume": "2.0",
-    "image": "https://2sc2.autoimg.cn/escimg/auto/g31/M01/07/5A/400x300_c42_autohomecar__ChxoHmgdk8uAWLRXAAn8qCSP66M802.jpg"
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g30/M03/6C/24/640x480_c42_autohomecar__CjIFU2hI99yASbZLAAmRHKWuOUM354.jpg"
   }
 ]

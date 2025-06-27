@@ -1,0 +1,30 @@
+[
+  {
+    "name": "911 2010 Carrera 3.6L\n2009",
+    "brand": "Porsche",
+    "year": "2009",
+    "price": 1440000,
+    "price_yuan": 12.0,
+    "yuan_to_rub": 12,
+    "mileage": "120 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g27/M08/72/79/640x480_c42_autohomecar__ChxkmWg-5l-AWIjwAA9iP85e4jg042.jpg"
+  },
+  {
+    "name": "911 2020 Carrera Cabriolet 3.0T\n2020",
+    "brand": "Porsche",
+    "year": "2020",
+    "price": 600000,
+    "price_yuan": 5.0,
+    "yuan_to_rub": 12,
+    "mileage": "50 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g27/M01/B7/6C/640x480_c42_autohomecar__ChxkmWhRC7iAfR-AAAJ4LmTodHw865.jpg"
+  }
+]

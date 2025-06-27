@@ -1,0 +1,30 @@
+[
+  {
+    "name": "2024 2.3T \n2024",
+    "brand": "Ford",
+    "year": "2024",
+    "price": 36000,
+    "price_yuan": 0.3,
+    "yuan_to_rub": 12,
+    "mileage": "3 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g27/M03/0B/A7/400x300_c42_autohomecar__CjIFVWg4BROAQVqRAAlj-b4mqvM757.jpg"
+  },
+  {
+    "name": "2024 3.0T \n\n2024",
+    "brand": "Ford",
+    "year": "2024",
+    "price": 300000,
+    "price_yuan": 2.5,
+    "yuan_to_rub": 12,
+    "mileage": "25 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g30/M06/ED/7C/400x300_c42_autohomecar__ChxknGg2l4aAeZBCAAjiRBt3yjQ356.jpg"
+  }
+]

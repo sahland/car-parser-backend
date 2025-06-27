@@ -1,0 +1,16 @@
+[
+  {
+    "name": "포르쉐",
+    "brand": "Porsche",
+    "year": "2020",
+    "price": 4886000,
+    "price_krw": 6980,
+    "krw_to_rub": 0.07,
+    "mileage": "935",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "3.0",
+    "image": "https://img.kbchachacha.com/IMG/carimg/l/img03/img2703/27031512_38272797735915747.jpeg?width=720"
+  }
+]

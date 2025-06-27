@@ -1,0 +1,517 @@
+
+<!-- BEGIN: Sidebar Car Catalog -->
+<div class="catalog-wrapper">
+  <h1 class="catalog-title">Каталог автомобилей из Китая</h1>
+  <p style="text-align:center; font-size:14px; color:white; margin: 0 0 30px;">
+    Цены указаны без учета доставки, пошлин и регистрации
+  </p>
+  <div class="catalog-container">
+    <aside class="sidebar">
+      <h3>Бренды</h3>
+      <ul class="brand-list">
+        <li onclick="filterBrand('all')" class="active">Все</li>
+        <li onclick="filterBrand('Audi')">Audi</li>
+<li onclick="filterBrand('BMW')">BMW</li>
+<li onclick="filterBrand('Fiat')">Fiat</li>
+<li onclick="filterBrand('Ford')">Ford</li>
+<li onclick="filterBrand('Genesis')">Genesis</li>
+<li onclick="filterBrand('Hongqi')">Hongqi</li>
+<li onclick="filterBrand('Hummer')">Hummer</li>
+<li onclick="filterBrand('IM Motors')">IM Motors</li>
+<li onclick="filterBrand('Infiniti')">Infiniti</li>
+<li onclick="filterBrand('Jaguar')">Jaguar</li>
+<li onclick="filterBrand('Lexus')">Lexus</li>
+<li onclick="filterBrand('Mercedes-Benz')">Mercedes-Benz</li>
+<li onclick="filterBrand('Mini')">Mini</li>
+<li onclick="filterBrand('Nissan')">Nissan</li>
+<li onclick="filterBrand('Other')">Other</li>
+<li onclick="filterBrand('Peugeot')">Peugeot</li>
+<li onclick="filterBrand('RAM')">RAM</li>
+<li onclick="filterBrand('Saab')">Saab</li>
+<li onclick="filterBrand('Volvo')">Volvo</li>
+<li onclick="filterBrand('XPeng')">XPeng</li>
+<li onclick="filterBrand('Zeekr')">Zeekr</li>
+      </ul>
+    </aside>
+    <main class="main-content">
+      <div id="car-container" class="car-container"></div>
+      <div id="pagination" class="pagination"></div>
+    </main>
+  </div>
+</div>
+
+<div id="car-popup" class="popup-overlay" style="display: none;">
+  <div class="popup-content">
+    <span class="popup-close" onclick="closePopup()">&times;</span>
+    <div class="popup-car-info">
+      <div class="popup-image" id="popup-image"></div>
+      <h2 id="popup-name"></h2>
+      <p><strong>Год:</strong> <span id="popup-year"></span></p>
+      <p><strong>Пробег:</strong> <span id="popup-mileage"></span></p>
+      <p><strong>Цена:</strong> <span id="popup-price"></span></p>
+    </div>
+    <form id="order-form" onsubmit="sendToTildaCRM(event)">
+      <input type="text" name="name" placeholder="Ваше имя" required />
+      <input type="tel" name="phone" placeholder="Телефон" required />
+      <input type="hidden" name="car_name" id="form-car-name" />
+      <input type="hidden" name="car_price" id="form-car-price" />
+      <button type="submit">Заказать автомобиль</button>
+    </form>
+    <form id="tilda-hidden-form"
+          action="https://forms.tildacdn.com/proccess/?projectid=12400529&pageid=67516763"
+          method="POST"
+          style="display: none;">
+      <input type="hidden" name="formname" value="Заказ авто" />
+      <input type="hidden" name="name" />
+      <input type="hidden" name="phone" />
+      <input type="hidden" name="car_name" />
+      <input type="hidden" name="car_price" />
+    </form>
+  </div>
+</div>
+
+<script>
+const allCars = [{"name": "2024 2.3T \n2024", "brand": "Ford", "year": "2024", "price": 36000, "price_yuan": 0.3, "yuan_to_rub": 12, "mileage": "3 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g27/M03/0B/A7/400x300_c42_autohomecar__CjIFVWg4BROAQVqRAAlj-b4mqvM757.jpg"}, {"name": "2004 6.7L \n2004", "brand": "Other", "year": "2004", "price": 134400, "price_yuan": 1.12, "yuan_to_rub": 12, "mileage": "11 200 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g27/M05/2D/04/400x300_c42_autohomecar__Chtlxmgz_r-ALI-4AAZshO3RNUk921.jpg"}, {"name": "Aventador 2019 Aventador SVJ Roadster\n2019", "brand": "Other", "year": "2019", "price": 120000, "price_yuan": 1.0, "yuan_to_rub": 12, "mileage": "10 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M06/58/B6/400x300_c42_autohomecar__ChxkPWgu20SAKGNkAAUTFXXjuH0585.jpg"}, {"name": "e-tron GT 2023 \n\n2024", "brand": "Audi", "year": "2024", "price": 91200, "price_yuan": 0.76, "yuan_to_rub": 12, "mileage": "7 600 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g26/M02/D4/A9/400x300_c42_autohomecar__ChxkjmgtPRSALgFWAAGuH5qqhhM450.jpg"}, {"name": "2016 480 V6 \n\n2017", "brand": "Other", "year": "2017", "price": 1560000, "price_yuan": 13.0, "yuan_to_rub": 12, "mileage": "130 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g26/M06/DE/B7/400x300_c42_autohomecar__ChxkjmgwNMGAWLTIAAvB4sEdfl0285.jpg"}, {"name": "G80 2021 2.5T \n2022", "brand": "Genesis", "year": "2022", "price": 660000, "price_yuan": 5.5, "yuan_to_rub": 12, "mileage": "55 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g30/M01/97/03/400x300_c42_autohomecar__Chtk2Ggmvo2AQfCIABKQxzeMJW0689.jpg"}, {"name": "L 2025 DM 200KM\n2025", "brand": "Other", "year": "2025", "price": 24000, "price_yuan": 0.2, "yuan_to_rub": 12, "mileage": "2 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M00/08/85/400x300_c42_autohomecar__Chtk2WgkBuSAVBisAAKM5haT4H0728.jpg"}, {"name": "A7 2016 50 TFSI quattro \n2017", "brand": "Audi", "year": "2017", "price": 1680000, "price_yuan": 14.0, "yuan_to_rub": 12, "mileage": "140 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g24/M03/91/00/400x300_c42_autohomecar__Chtk3Wg8lUyACxxEAAIS365PIv0968.jpg"}, {"name": "MINI JCW CLUBMAN 2022 2.0T JOHN COOPER WORKS ALL-\n2021", "brand": "Mini", "year": "2021", "price": 552000, "price_yuan": 4.6, "yuan_to_rub": 12, "mileage": "46 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g25/M03/E2/42/400x300_c42_autohomecar__ChxkqWg9D9qAcqeoAAZkMXJK4O4097.jpg"}, {"name": "GS 2012 350 \n2012", "brand": "Lexus", "year": "2012", "price": 1680000, "price_yuan": 14.0, "yuan_to_rub": 12, "mileage": "140 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g24/M09/B9/08/400x300_c42_autohomecar__Chxky2g9uraANoDcAAxih7BUQGc732.jpg"}, {"name": "2015 6.6T \n2018", "brand": "Other", "year": "2018", "price": 732000, "price_yuan": 6.1, "yuan_to_rub": 12, "mileage": "61 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g27/M04/DF/07/400x300_c42_autohomecar__CjIFVWgq0S-AJhdWAAYXfeKy4ks441.jpg"}, {"name": "2018 4.0L \n2018", "brand": "Other", "year": "2018", "price": 1140000, "price_yuan": 9.5, "yuan_to_rub": 12, "mileage": "95 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g24/M0B/B7/D1/400x300_c42_autohomecar__Chxky2g9UxeARPB0AAt6Jnen1Hs179.jpg"}, {"name": "M6 2015 M6 Gran Coupe\n2019", "brand": "BMW", "year": "2019", "price": 324000, "price_yuan": 2.7, "yuan_to_rub": 12, "mileage": "27 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M0B/05/B4/400x300_c42_autohomecar__ChxkPWdJUTuAKQH6AAwBMBwzyhM189.jpg"}, {"name": "S 2021 S 450 L 4MATIC\n2021", "brand": "Mercedes-Benz", "year": "2021", "price": 840000, "price_yuan": 7.0, "yuan_to_rub": 12, "mileage": "70 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g30/M00/DE/BB/400x300_c42_autohomecar__Chtk2Gg9PcWAbL3KAAGXiRaX5n0847.jpg"}, {"name": "L7 2022 Dynamic\n2022", "brand": "IM Motors", "year": "2022", "price": 259200, "price_yuan": 2.16, "yuan_to_rub": 12, "mileage": "21 600 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M08/A5/9A/400x300_c42_autohomecar__ChxkPWg6ZhyAanGbAAx3UA2LSyI472.jpg"}, {"name": "2017 P250 S\n2018", "brand": "Other", "year": "2018", "price": 960000, "price_yuan": 8.0, "yuan_to_rub": 12, "mileage": "80 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M06/7C/52/400x300_c42_autohomecar__Chtk2Wg0i3eAculwAAkWPwRRwgo236.jpg"}, {"name": "CL 2008 CL 600\n2009", "brand": "Mercedes-Benz", "year": "2009", "price": 1920000, "price_yuan": 16.0, "yuan_to_rub": 12, "mileage": "160 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g31/M07/00/A4/400x300_c42_autohomecar__ChtlyGgcbgmAZzq1AATpAlpQFsY114.jpg"}, {"name": "C70 2010 2.5T T5\n2011", "brand": "Volvo", "year": "2011", "price": 960000, "price_yuan": 8.0, "yuan_to_rub": 12, "mileage": "80 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g25/M04/D2/83/400x300_c42_autohomecar__ChxkqWg31e6AT90WAAdVqmh3hWM688.jpg"}, {"name": "CLS 2022 CLS 300 \n2022", "brand": "Mercedes-Benz", "year": "2022", "price": 552000, "price_yuan": 4.6, "yuan_to_rub": 12, "mileage": "46 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M0A/B2/88/400x300_c42_autohomecar__Chtk2Wg8cb6AB9VBAAXeKpb9S58622.jpg"}, {"name": "BJ80 2020 3.0T \n2020", "brand": "Other", "year": "2020", "price": 420000, "price_yuan": 3.5, "yuan_to_rub": 12, "mileage": "35 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g28/M06/D9/03/400x300_c42_autohomecar__CjIFVGg9FfKAaJ_VAAkeml7Oa_k018.jpg"}, {"name": "Panamera 2019 Panamera 2.9T\n2020", "brand": "Other", "year": "2020", "price": 432000, "price_yuan": 3.6, "yuan_to_rub": 12, "mileage": "36 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g30/M02/1A/6B/400x300_c42_autohomecar__CjIFU2gxL76APLXHAAlRd71-lL8973.jpg"}, {"name": "X6 2022 xDrive40i  M\n2022", "brand": "BMW", "year": "2022", "price": 300000, "price_yuan": 2.5, "yuan_to_rub": 12, "mileage": "25 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g26/M0B/59/40/400x300_c42_autohomecar__ChtlxWg24LmAANuvAApKQOv9fWA422.jpg"}, {"name": "SQ5 2021 3.0 TFSI quattro\n2023", "brand": "Audi", "year": "2023", "price": 300000, "price_yuan": 2.5, "yuan_to_rub": 12, "mileage": "25 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g26/M07/6C/4C/400x300_c42_autohomecar__ChtlxWg9CG6AKzSeAArO3YwAGi8181.jpg"}, {"name": "XFL 2022 XFL 2.0T P250 \n2022", "brand": "Jaguar", "year": "2022", "price": 240000, "price_yuan": 2.0, "yuan_to_rub": 12, "mileage": "20 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g27/M03/CF/79/400x300_c42_autohomecar__CjIFVWglWwOAUhwaAAvUiEOBP1s287.jpg"}, {"name": "2016 3.0L  V\n2016", "brand": "Other", "year": "2016", "price": 504000, "price_yuan": 4.2, "yuan_to_rub": 12, "mileage": "42 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g26/M02/A5/37/400x300_c42_autohomecar__CjIFVmg9KlCAIpQuAA2a__-BYtk148.jpg"}, {"name": "2021 3.0T V6 \n2021", "brand": "Other", "year": "2021", "price": 600000, "price_yuan": 5.0, "yuan_to_rub": 12, "mileage": "50 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M0B/4F/37/400x300_c42_autohomecar__ChxkPWgtWvuANMCvAAL4jQ3kkHc570.jpg"}, {"name": "A7 2018 40 TFSI quattro \n2018", "brand": "Audi", "year": "2018", "price": 480000, "price_yuan": 4.0, "yuan_to_rub": 12, "mileage": "40 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g30/M05/E4/95/400x300_c42_autohomecar__CjIFU2gdtGmAcevNAAsDjjwPApA216.jpg"}, {"name": "Z9GT 2024 1100Pro\n2024", "brand": "Other", "year": "2024", "price": 28800, "price_yuan": 0.24, "yuan_to_rub": 12, "mileage": "2 400 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g27/M06/1A/41/400x300_c42_autohomecar__ChtlxmgtkZiAfjR4AAWHVsXSEpI011.jpg"}, {"name": "2018 4.0L \n2019", "brand": "Other", "year": "2019", "price": 600000, "price_yuan": 5.0, "yuan_to_rub": 12, "mileage": "50 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g31/M07/A5/A8/400x300_c42_autohomecar__ChtlyGf5xa2AYYk0AAoHFHnYStk574.jpg"}, {"name": "2020 P250 R-DYNAMIC S\n2020", "brand": "Other", "year": "2020", "price": 600000, "price_yuan": 5.0, "yuan_to_rub": 12, "mileage": "50 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g30/M01/F3/2A/400x300_c42_autohomecar__ChxknGg4EMiAH-xJAAhUB32ZCJg549.jpg"}, {"name": "Taycan 2020 Taycan\n2021", "brand": "Other", "year": "2021", "price": 600000, "price_yuan": 5.0, "yuan_to_rub": 12, "mileage": "50 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M03/8B/B5/400x300_c42_autohomecar__Chtk2Wg2iUOAVWp1AAcAVQ15hV4954.jpg"}, {"name": "RS 5 2023 RS 5 2.9T Sportback \n2024", "brand": "Audi", "year": "2024", "price": 60000, "price_yuan": 0.5, "yuan_to_rub": 12, "mileage": "5 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g25/M0A/E2/F1/400x300_c42_autohomecar__ChxkqWg9R4mAc63WAAH_oxT1dig647.jpg"}, {"name": "RS 4 2019  RS 4 2.9T Avant\n\n2019", "brand": "Audi", "year": "2019", "price": 684000, "price_yuan": 5.7, "yuan_to_rub": 12, "mileage": "57 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g25/M01/56/14/400x300_c42_autohomecar__ChtliGg9BwqAakKDAAqkiEVJC_Q464.jpg"}, {"name": "Panamera 2022 Panamera 4S Sport Turismo 2.9T\n2023", "brand": "Other", "year": "2023", "price": 240000, "price_yuan": 2.0, "yuan_to_rub": 12, "mileage": "20 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g27/M02/4D/B5/400x300_c42_autohomecar__Chtlxmg9nAuAF79ZAAjV_hj3IOc974.jpg"}, {"name": "S 2014 S 400 L \n2013", "brand": "Mercedes-Benz", "year": "2013", "price": 1080000, "price_yuan": 9.0, "yuan_to_rub": 12, "mileage": "90 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g31/M05/75/EF/400x300_c42_autohomecar__ChxoHWg5VoqAIsHRAAobcXgjUQM055.jpg"}, {"name": "X 2024 \n2024", "brand": "Zeekr", "year": "2024", "price": 261600, "price_yuan": 2.18, "yuan_to_rub": 12, "mileage": "21 800 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g31/M01/1F/25/400x300_c42_autohomecar__ChxoHWghm5yARItjAApbp0VTOG0523.jpg"}, {"name": "6GT2019 630i M\n2019", "brand": "BMW", "year": "2019", "price": 684000, "price_yuan": 5.7, "yuan_to_rub": 12, "mileage": "57 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M08/B6/ED/400x300_c42_autohomecar__ChxkPmg9L4mAfkOhAADnpnMbKk8339.jpg"}, {"name": "GTI 2021  380TSI DSG GTI\n2023", "brand": "Other", "year": "2023", "price": 194400, "price_yuan": 1.62, "yuan_to_rub": 12, "mileage": "16 200 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g24/M07/92/31/400x300_c42_autohomecar__Chtk3Wg9G2-AcitAAAFUQX3YBcw867.jpg"}, {"name": "2024 2.0T \n2023", "brand": "Other", "year": "2023", "price": 756000, "price_yuan": 6.3, "yuan_to_rub": 12, "mileage": "63 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M0A/B6/C9/400x300_c42_autohomecar__Chtk2Wg9HI6AG11gAAlsAW2aQ4Y763.jpg"}, {"name": "2015 1.3 AT Mode3\n2015", "brand": "Other", "year": "2015", "price": 480000, "price_yuan": 4.0, "yuan_to_rub": 12, "mileage": "40 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M04/B8/E7/400x300_c42_autohomecar__ChxkPmg9gbqAB7FRAArxsbLMCUk512.jpg"}, {"name": "2020 3.0T V6 \n2020", "brand": "Other", "year": "2020", "price": 900000, "price_yuan": 7.5, "yuan_to_rub": 12, "mileage": "75 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M08/B8/3A/400x300_c42_autohomecar__ChxkPmg9YoSAIAjWAAczlqXpbIQ562.jpg"}, {"name": "AAMG 2019 AMG A 35 L 4MATIC\n\n2021", "brand": "Mercedes-Benz", "year": "2021", "price": 721200, "price_yuan": 6.01, "yuan_to_rub": 12, "mileage": "60 100 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M06/B9/7D/400x300_c42_autohomecar__ChxkPWg9m4qAd1gwAAl-8WO42YE369.jpg"}, {"name": "GV80 2021 2.5T \n\n2022", "brand": "Genesis", "year": "2022", "price": 720000, "price_yuan": 6.0, "yuan_to_rub": 12, "mileage": "60 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g27/M05/43/03/400x300_c42_autohomecar__Chtlxmg5gqqALVOxAAnadot0n0E354.jpg"}, {"name": "2018 2.7L \n2018", "brand": "Other", "year": "2018", "price": 480000, "price_yuan": 4.0, "yuan_to_rub": 12, "mileage": "40 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g26/M01/5E/05/400x300_c42_autohomecar__ChtlxWg4IKSAbxc0AAUXEyuyTo4305.jpg"}, {"name": "2016 3.6L \n2016", "brand": "Other", "year": "2016", "price": 936000, "price_yuan": 7.8, "yuan_to_rub": 12, "mileage": "78 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g30/M00/AD/6B/400x300_c42_autohomecar__ChxknGWVUkqAORabAA0K46V_tN4667.jpg"}, {"name": "Ghibli 2014 3.0T S\n2013", "brand": "Other", "year": "2013", "price": 1164000, "price_yuan": 9.7, "yuan_to_rub": 12, "mileage": "97 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M01/9E/00/400x300_c42_autohomecar__ChxkPWg5PZOABMYEAAmnR-f6MNI258.jpg"}, {"name": "FX 2010 FX35 \n2010", "brand": "Infiniti", "year": "2010", "price": 1716000, "price_yuan": 14.3, "yuan_to_rub": 12, "mileage": "143 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M04/82/86/400x300_c42_autohomecar__Chtk2Wg1YzqAbhkAAASB1DJ7QXA855.jpg"}, {"name": "Z4 2019 sDrive 25i M\n2019", "brand": "BMW", "year": "2019", "price": 444000, "price_yuan": 3.7, "yuan_to_rub": 12, "mileage": "37 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g31/M0B/12/3C/400x300_c42_autohomecar__ChtlyGgfWWSAW9GaAAmlI3XmGQo505.jpg"}, {"name": "CLE AMG 2025 AMG CLE 53 4MATIC+", "brand": "Mercedes-Benz", "year": "—", "price": 1200, "price_yuan": 0.01, "yuan_to_rub": 12, "mileage": "—", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g27/M02/17/5A/400x300_c42_autohomecar__ChxkmWghV76AAsMNAAzw7HLymNE566.jpg"}, {"name": "LANCER 2008 2.0T EVOLUTION X BBS\n2011", "brand": "Other", "year": "2011", "price": 552000, "price_yuan": 4.6, "yuan_to_rub": 12, "mileage": "46 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M01/65/0F/400x300_c42_autohomecar__ChxkPWZbGnqAbyMXAA0UlRH9kV8463.jpg"}, {"name": "001 FR 2023 FR 100kWh\n2024", "brand": "Zeekr", "year": "2024", "price": 192000, "price_yuan": 1.6, "yuan_to_rub": 12, "mileage": "16 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g31/M00/60/54/400x300_c42_autohomecar__ChtlyGf0sZ2AG-oIAArY1F7IWxA306.jpg"}, {"name": "M2 2018 M2 \n2019", "brand": "BMW", "year": "2019", "price": 492000, "price_yuan": 4.1, "yuan_to_rub": 12, "mileage": "41 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g26/M05/09/1D/400x300_c42_autohomecar__Chxkjmg9PtmAPQ4gAAugndGMY-o580.jpg"}, {"name": "2024 3.0T \n\n2024", "brand": "Ford", "year": "2024", "price": 300000, "price_yuan": 2.5, "yuan_to_rub": 12, "mileage": "25 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g30/M06/ED/7C/400x300_c42_autohomecar__ChxknGg2l4aAeZBCAAjiRBt3yjQ356.jpg"}, {"name": "2023 3.5T \n\n2023", "brand": "Other", "year": "2023", "price": 336000, "price_yuan": 2.8, "yuan_to_rub": 12, "mileage": "28 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g26/M07/95/5A/400x300_c42_autohomecar__CjIFVmg33oCADEcBAA7U_kWb0o0025.jpg"}, {"name": "2006 8.0T \n2006", "brand": "Other", "year": "2006", "price": 60000, "price_yuan": 0.5, "yuan_to_rub": 12, "mileage": "5 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g31/M0A/58/3E/400x300_c42_autohomecar__ChxoHWfIaRiALK4sAAUu5X_auew001.jpg"}, {"name": "i8 2014 \n2015", "brand": "BMW", "year": "2015", "price": 780000, "price_yuan": 6.5, "yuan_to_rub": 12, "mileage": "65 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M06/F6/39/400x300_c42_autohomecar__ChxkPmgEiyOACpV-AAJqVAIMA_4982.jpg"}, {"name": "2005 6.0T \n2007", "brand": "Other", "year": "2007", "price": 1440000, "price_yuan": 12.0, "yuan_to_rub": 12, "mileage": "120 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g26/M04/77/AD/400x300_c42_autohomecar__CjIFVmgvIE2AKefmAAiMGnKYws8720.jpg"}, {"name": "EM90 2025 Ultra \n\n2024", "brand": "Volvo", "year": "2024", "price": 132000, "price_yuan": 1.1, "yuan_to_rub": 12, "mileage": "11 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M01/8A/E8/400x300_c42_autohomecar__Chtk2Wg2cZWAfwKYABAGgeUHkDQ245.jpg"}, {"name": "2024 3.0T  20\n2025", "brand": "Hongqi", "year": "2025", "price": 1200, "price_yuan": 0.01, "yuan_to_rub": 12, "mileage": "100 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M02/36/FC/400x300_c42_autohomecar__ChxkPmgPQyaAMCK1AAMnKMEgB6c741.jpg"}, {"name": "H1 2004 6.5L \n2012", "brand": "Hummer", "year": "2012", "price": 324000, "price_yuan": 2.7, "yuan_to_rub": 12, "mileage": "27 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g31/M06/CA/01/400x300_c42_autohomecar__ChtlyGgTRn6ANKT7AA3YVLhP9pU745.jpg"}, {"name": "2017 5.3L \n2017", "brand": "Other", "year": "2017", "price": 912000, "price_yuan": 7.6, "yuan_to_rub": 12, "mileage": "76 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g31/M08/31/B7/400x300_c42_autohomecar__ChtlyGePY5eAa4_yAAsu-SSH8ic918.jpg"}, {"name": "RAM Trucks 2017 5.7L \n2017", "brand": "RAM", "year": "2017", "price": 1560000, "price_yuan": 13.0, "yuan_to_rub": 12, "mileage": "130 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g26/M09/B6/FE/400x300_c42_autohomecar__Chxkjmgi27OAdZlDAAvvEC1uB44608.jpg"}, {"name": "500 2024 1.4T", "brand": "Fiat", "year": "—", "price": 1200, "price_yuan": 0.01, "yuan_to_rub": 12, "mileage": "—", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g31/M0A/63/D7/400x300_c42_autohomecar__ChtlyGfSY3WAXM_UAAPggfdzqs8934.jpg"}, {"name": "2023 3.6L \n2023", "brand": "Other", "year": "2023", "price": 216000, "price_yuan": 1.8, "yuan_to_rub": 12, "mileage": "18 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M07/F0/BF/400x300_c42_autohomecar__ChxkPWghhseAZLUNAAgS4Vm7pLs878.jpg"}, {"name": "ESCALADE 2024 3.0T", "brand": "Other", "year": "—", "price": 1200, "price_yuan": 0.01, "yuan_to_rub": 12, "mileage": "—", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g30/M05/A9/6E/400x300_c42_autohomecar__CjIFU2duUUGAIb0EAAbtpjGwuFA306.jpg"}, {"name": "California T 2012 4.3L \n2012", "brand": "Other", "year": "2012", "price": 840000, "price_yuan": 7.0, "yuan_to_rub": 12, "mileage": "70 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M0B/01/2B/400x300_c42_autohomecar__ChxkPWgJ0c6AYLlEAAJ5nqEh73k101.jpg"}, {"name": "508 2023 508L 400THP \n2023", "brand": "Peugeot", "year": "2023", "price": 96000, "price_yuan": 0.8, "yuan_to_rub": 12, "mileage": "8 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g27/M07/F1/72/400x300_c42_autohomecar__ChtlxmgfBEuATkZJAAM_09ADvWw426.jpg"}, {"name": "GLC AMG 2017 AMG GLC 43 4MATIC\n2019", "brand": "Mercedes-Benz", "year": "2019", "price": 1320000, "price_yuan": 11.0, "yuan_to_rub": 12, "mileage": "110 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g31/M05/59/11/400x300_c42_autohomecar__ChxoHWgxixGAf2czAAusx2e3oa8626.jpg"}, {"name": "2016 2.0T\n2016", "brand": "Other", "year": "2016", "price": 840000, "price_yuan": 7.0, "yuan_to_rub": 12, "mileage": "70 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M01/26/0C/400x300_c42_autohomecar__Chtk2Wgmuf6ABAdpAAQ7QxLkMls279.jpg"}, {"name": "G9 2024 650 Max\n2024", "brand": "XPeng", "year": "2024", "price": 120000, "price_yuan": 1.0, "yuan_to_rub": 12, "mileage": "10 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g26/M02/EE/6F/400x300_c42_autohomecar__Chxkjmg1Y3OASWm1AAJyeE2aPjM072.jpg"}, {"name": "()LC300 2023 4.0L \n2023", "brand": "Other", "year": "2023", "price": 360000, "price_yuan": 3.0, "yuan_to_rub": 12, "mileage": "30 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M05/B6/DE/400x300_c42_autohomecar__ChxkPmg9KsKAMN5AAAZlshlHYkw159.jpg"}, {"name": "2024 4.0L \n2024", "brand": "Other", "year": "2024", "price": 72000, "price_yuan": 0.6, "yuan_to_rub": 12, "mileage": "6 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g30/M03/47/60/400x300_c42_autohomecar__CjIFU2frxTCAAgNQAAXNK2FsbK4899.jpg"}, {"name": "GLE AMG 2023 AMG GLE 53 4MATIC+ SUV 55\n2024", "brand": "Mercedes-Benz", "year": "2024", "price": 168000, "price_yuan": 1.4, "yuan_to_rub": 12, "mileage": "14 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g30/M09/DF/52/400x300_c42_autohomecar__Chtk2Gg9aUeAaVDiAAHdn9NRQSI984.jpg"}, {"name": "EV 2024 \n2024", "brand": "Hummer", "year": "2024", "price": 216000, "price_yuan": 1.8, "yuan_to_rub": 12, "mileage": "18 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g26/M01/58/80/400x300_c42_autohomecar__ChtlxWg2uh-AC3gqAAdqKPR0xvo184.jpg"}, {"name": "HIACE 2020 3.5L \n2021", "brand": "Other", "year": "2021", "price": 96000, "price_yuan": 0.8, "yuan_to_rub": 12, "mileage": "8 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M0A/B6/D3/400x300_c42_autohomecar__ChxkPWg9Kx2AM5h5AAFOnn-pbgo665.jpg"}, {"name": "XC90 2015 T6  7\n2016", "brand": "Volvo", "year": "2016", "price": 960000, "price_yuan": 8.0, "yuan_to_rub": 12, "mileage": "80 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g30/M02/CF/CE/400x300_c42_autohomecar__Chtk2Gg4MImAIGCOAASyOaRdMuQ461.jpg"}, {"name": "7 2019 740Li xDrive  \n2020", "brand": "BMW", "year": "2020", "price": 864000, "price_yuan": 7.2, "yuan_to_rub": 12, "mileage": "72 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g27/M04/35/19/400x300_c42_autohomecar__ChxkmWgr1UKAN1wLAAicfpZUfhk278.jpg"}, {"name": "GV70 2023 2.5T \n2023", "brand": "Genesis", "year": "2023", "price": 336000, "price_yuan": 2.8, "yuan_to_rub": 12, "mileage": "28 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g31/M00/6A/BA/400x300_c42_autohomecar__ChtlyGg2cWuATyRVAAd0s58qq1g652.jpg"}, {"name": "720S 2017 4.0T Coupe\n2018", "brand": "Other", "year": "2018", "price": 336000, "price_yuan": 2.8, "yuan_to_rub": 12, "mileage": "28 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g25/M03/4F/70/400x300_c42_autohomecar__ChtliGg6itWAK5T8AALPAKMN7vk134.jpg"}, {"name": "XC90 2021 B6  7\n2021", "brand": "Volvo", "year": "2021", "price": 360000, "price_yuan": 3.0, "yuan_to_rub": 12, "mileage": "30 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M04/25/1F/400x300_c42_autohomecar__Chtk2WgmpuSAda_SABGJd51Z4Nc077.jpg"}, {"name": "2021 3.5T \n2022", "brand": "Other", "year": "2022", "price": 840000, "price_yuan": 7.0, "yuan_to_rub": 12, "mileage": "70 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M00/26/19/400x300_c42_autohomecar__ChxkPWgNsWmAXi2LAAW5QRXQqH8061.jpg"}, {"name": "RAM Trucks 2020 5.7L \n2020", "brand": "RAM", "year": "2020", "price": 1200000, "price_yuan": 10.0, "yuan_to_rub": 12, "mileage": "100 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M04/94/8C/400x300_c42_autohomecar__ChxkPWg3ztaAKtcYAAu6iTjtcjY990.jpg"}, {"name": "ABARTH 695 2022 1.4T \n2025", "brand": "Other", "year": "2025", "price": 6000, "price_yuan": 0.05, "yuan_to_rub": 12, "mileage": "500 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M01/19/F8/400x300_c42_autohomecar__Chtk2WdX4JmAXB6-AAn7nVkn5c8085.jpg"}, {"name": "1994 5.0L \n1994", "brand": "Other", "year": "1994", "price": 120000, "price_yuan": 1.0, "yuan_to_rub": 12, "mileage": "10 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g30/M03/9E/D9/400x300_c42_autohomecar__CjIFU2gBtz-AFyf9AATVFUr2JVY255.jpg"}, {"name": "S800 2025   5", "brand": "Other", "year": "2024", "price": 1200, "price_yuan": 0.01, "yuan_to_rub": 12, "mileage": "100 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M06/B8/13/400x300_c42_autohomecar__ChxkPmg9XeyAO_alAA4b95BjfyQ258.jpg"}, {"name": "E 2023 E 260 L\n2022", "brand": "Mercedes-Benz", "year": "2022", "price": 492000, "price_yuan": 4.1, "yuan_to_rub": 12, "mileage": "41 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g30/M05/D6/7C/400x300_c42_autohomecar__ChxknGgv34iAL1flAAfb3xM7O7k995.jpg"}, {"name": "ESCALADE 2017 6.2L ESV\n2019", "brand": "Other", "year": "2019", "price": 444000, "price_yuan": 3.7, "yuan_to_rub": 12, "mileage": "37 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g31/M0A/1B/B9/400x300_c42_autohomecar__ChtlyGgAmOyAdqOlAAGdvIzTNOY554.jpg"}, {"name": "2013 6.7L EWB\n2013", "brand": "Other", "year": "2013", "price": 600000, "price_yuan": 5.0, "yuan_to_rub": 12, "mileage": "50 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g31/M01/40/7B/400x300_c42_autohomecar__ChtlyGejOu-Aaj8TAAM71EYxvsM234.jpg"}, {"name": "2023 3.0 L6 400PS \n2023", "brand": "Other", "year": "2023", "price": 576000, "price_yuan": 4.8, "yuan_to_rub": 12, "mileage": "48 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g26/M05/A5/90/400x300_c42_autohomecar__CjIFVmg9SceACRRQAAkS-xkGO44647.jpg"}, {"name": "GT-R 2023 3.8T \n2024", "brand": "Nissan", "year": "2024", "price": 192000, "price_yuan": 1.6, "yuan_to_rub": 12, "mileage": "16 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g30/M0B/DD/31/400x300_c42_autohomecar__ChxknGfjk4GAXHSaAAjGZlT1nHo093.jpg"}, {"name": "695 2013 1.4L \n2013", "brand": "Other", "year": "2013", "price": 48000, "price_yuan": 0.4, "yuan_to_rub": 12, "mileage": "4 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g27/M09/E9/D6/400x300_c42_autohomecar__ChtlxmgcTf2AG0FPAAtK7ZneQkY885.jpg"}, {"name": "Chiron 2024 8.0L \n2024", "brand": "Other", "year": "2024", "price": 1200, "price_yuan": 0.01, "yuan_to_rub": 12, "mileage": "100 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M04/66/20/400x300_c42_autohomecar__Chtk2WbK31SAfwSbAANK6M4iX-Y331.jpg"}, {"name": "2017 6.2L \n2020", "brand": "Other", "year": "2020", "price": 24000, "price_yuan": 0.2, "yuan_to_rub": 12, "mileage": "2 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M00/51/05/400x300_c42_autohomecar__Chtk2WaEE4-APDrUAA93ylEZUeE450.jpg"}, {"name": "2017 3.6L \n2017", "brand": "Other", "year": "2017", "price": 960000, "price_yuan": 8.0, "yuan_to_rub": 12, "mileage": "80 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g28/M09/19/C3/400x300_c42_autohomecar__Chtlx2gv8eaAbjrDAAUhgwgjF5Q696.jpg"}, {"name": "Mustang 2019 5.0L \n2019", "brand": "Other", "year": "2019", "price": 420000, "price_yuan": 3.5, "yuan_to_rub": 12, "mileage": "35 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M01/C4/0D/400x300_c42_autohomecar__ChxkPWdG036AbERrAAfw36omq-A941.jpg"}, {"name": "03 2022 03+ Cyan \n2021", "brand": "Other", "year": "2021", "price": 360000, "price_yuan": 3.0, "yuan_to_rub": 12, "mileage": "30 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M0A/58/49/400x300_c42_autohomecar__ChxkPmguzPmABEj_AAMo6V4xAj0210.jpg"}, {"name": "Panamera 2017 Panamera 3.0T\n2017", "brand": "Other", "year": "2017", "price": 600000, "price_yuan": 5.0, "yuan_to_rub": 12, "mileage": "50 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M09/8B/16/400x300_c42_autohomecar__Chtk2Wg2dhyAGT_CAAIOx0_3H8s420.jpg"}, {"name": "SUPRA 2022 GR SUPRA 2.0T \n\n2024", "brand": "Other", "year": "2024", "price": 12000, "price_yuan": 0.1, "yuan_to_rub": 12, "mileage": "1 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g26/M05/FE/FC/400x300_c42_autohomecar__Chxkjmg5ggaAFDx0AAmVh3GyF2c370.jpg"}, {"name": "E 2017 E 300 L \n2016", "brand": "Mercedes-Benz", "year": "2016", "price": 1056000, "price_yuan": 8.8, "yuan_to_rub": 12, "mileage": "88 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g27/M02/40/00/400x300_c42_autohomecar__ChxkmWgu_a6AH1LsAAwLAx-wyBI937.jpg"}, {"name": "XFL 2022 XFL 2.0T P300 \n\n2022", "brand": "Jaguar", "year": "2022", "price": 480000, "price_yuan": 4.0, "yuan_to_rub": 12, "mileage": "40 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M05/95/23/400x300_c42_autohomecar__ChxkPWg34iKACLcvAAWQPjCqH7Q974.jpg"}, {"name": "SLSAMG 2011 SLS AMG\n2012", "brand": "Mercedes-Benz", "year": "2012", "price": 840000, "price_yuan": 7.0, "yuan_to_rub": 12, "mileage": "70 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g32/M0A/02/27/400x300_c42_autohomecar__ChxkPmgJ70KAaGMwAAYeEJxOtZQ120.jpg"}, {"name": "H2 2024", "brand": "Hummer", "year": "—", "price": 1200, "price_yuan": 0.01, "yuan_to_rub": 12, "mileage": "—", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g30/M0A/71/BA/400x300_c42_autohomecar__Chtk2GgYJj-AOwOMAAhsHNp8aSQ270.jpg"}, {"name": "LANCER 1999 2.0T EVO \n1999", "brand": "Other", "year": "1999", "price": 2280000, "price_yuan": 19.0, "yuan_to_rub": 12, "mileage": "190 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g31/M06/B9/E2/400x300_c42_autohomecar__ChtlyGd-C2aAebkJAAVICah2jvg570.jpg"}, {"name": "Plus 4 2024 2.0T 115", "brand": "Other", "year": "2024", "price": 1200, "price_yuan": 0.01, "yuan_to_rub": 12, "mileage": "100 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g31/M0B/A3/D6/400x300_c42_autohomecar__ChxoHWeprYuAb-fpAAYJMznV1zI543.jpg"}, {"name": "2022 3.5T \n2023", "brand": "Other", "year": "2023", "price": 480000, "price_yuan": 4.0, "yuan_to_rub": 12, "mileage": "40 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g28/M08/F8/80/400x300_c42_autohomecar__Chxkmmg2ed-ALcZuAALGQWW0zXo632.jpg"}, {"name": "L 2024 DM-i 80KM\n2024", "brand": "Other", "year": "2024", "price": 156000, "price_yuan": 1.3, "yuan_to_rub": 12, "mileage": "13 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g30/M09/79/27/400x300_c42_autohomecar__ChxknGgM29aASlUbAAxR0rLA_aE106.jpg"}, {"name": "UX 2019 260h F SPORT V\n2019", "brand": "Lexus", "year": "2019", "price": 576000, "price_yuan": 4.8, "yuan_to_rub": 12, "mileage": "48 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g28/M00/FF/3B/400x300_c42_autohomecar__Chxkmmg4E3WAW9p6AA1DTyihqxc632.jpg"}, {"name": "L380 2025 570km\n2025", "brand": "Other", "year": "2025", "price": 1200, "price_yuan": 0.01, "yuan_to_rub": 12, "mileage": "100 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g31/M04/61/8D/400x300_c42_autohomecar__ChtlyGf0x6WAOSguAAGk0PNsddo555.jpg"}, {"name": "RS 6 2024  RS 6 4.0T Avant performance\n2024", "brand": "Audi", "year": "2024", "price": 72000, "price_yuan": 0.6, "yuan_to_rub": 12, "mileage": "6 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g28/M07/BD/69/400x300_c42_autohomecar__CjIFVGg1J2iAHzniAAIKgvIU7UI299.jpg"}, {"name": "i4 2022 eDrive40\n2022", "brand": "BMW", "year": "2022", "price": 360000, "price_yuan": 3.0, "yuan_to_rub": 12, "mileage": "30 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g26/M08/A5/78/400x300_c42_autohomecar__ChxkjmgcDX6AOkOgAAS-gF2M3Co913.jpg"}, {"name": "2012 1.8L \n2014", "brand": "Other", "year": "2014", "price": 120000, "price_yuan": 1.0, "yuan_to_rub": 12, "mileage": "10 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g25/M04/36/56/400x300_c42_autohomecar__ChxkqWTwZsKATs3pAAlBssmMUFs093.jpg"}, {"name": "RAM Trucks 2022 5.7L \n\n2024", "brand": "RAM", "year": "2024", "price": 96000, "price_yuan": 0.8, "yuan_to_rub": 12, "mileage": "8 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g30/M04/1E/42/400x300_c42_autohomecar__CjIFU2gymJ6ABA8BAAGScu0jqsw610.jpg"}, {"name": "2018 4.0L \n2020", "brand": "Other", "year": "2020", "price": 240000, "price_yuan": 2.0, "yuan_to_rub": 12, "mileage": "20 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g31/M02/6F/0F/400x300_c42_autohomecar__ChtlyGflDkSAX1gWAA4hy408KDc764.jpg"}, {"name": "2022 5.3L \n\n2023", "brand": "Saab", "year": "2023", "price": 456000, "price_yuan": 3.8, "yuan_to_rub": 12, "mileage": "38 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g28/M03/D1/D5/400x300_c42_autohomecar__Chtlx2gUc46Af_xnAAa36fAg8qU001.jpg"}, {"name": "2022 6.2L \n2025", "brand": "Other", "year": "2025", "price": 60000, "price_yuan": 0.5, "yuan_to_rub": 12, "mileage": "5 000 км", "fuel_type": "—", "power": "—", "drive": "—", "engine_volume": "2.0", "image": "https://images.weserv.nl/?url=2sc2.autoimg.cn/escimg/auto/g28/M05/D8/C8/400x300_c42_autohomecar__Chtlx2gYVgGASrwlAAu0c1Dlvkw548.jpg"}];
+let currentBrand = "all";
+let currentPage = 1;
+const itemsPerPage = getItemsPerPage(); // переместить внутрь функции
+
+function getItemsPerPage() {
+  return window.innerWidth <= 768 ? 4 : 10;
+}
+
+function filterBrand(brand) {
+  currentBrand = brand;
+  currentPage = 1;
+  document.querySelectorAll('.brand-list li').forEach(el => el.classList.remove('active'));
+  const activeItem = Array.from(document.querySelectorAll('.brand-list li')).find(el => el.textContent === brand || (brand === 'all' && el.textContent === 'Все'));
+  if (activeItem) activeItem.classList.add('active');
+  renderCatalog();
+}
+
+function sendToTildaCRM(e) {
+  e.preventDefault();
+
+  const name = e.target.name.value;
+  const phone = e.target.phone.value;
+  const carName = e.target['car_name'].value;
+  const carPrice = e.target['car_price'].value;
+
+  const formData = new FormData();
+  formData.append('formname', 'Заказ авто');
+  formData.append('name', name);
+  formData.append('phone', phone);
+  formData.append('car_name', carName);
+  formData.append('car_price', carPrice);
+
+  fetch('https://auto-east.tilda.ws/customized_cars', {
+    method: 'POST',
+    body: formData,
+    mode: 'no-cors'
+  });
+
+  alert('✅ Заявка отправлена!');
+  closePopup();
+};
+
+function openPopup(car) {
+  document.getElementById("popup-name").textContent = car.name;
+  document.getElementById("popup-year").textContent = car.year;
+  document.getElementById("popup-mileage").textContent = car.mileage;
+  document.getElementById("popup-price").textContent = car.price.toLocaleString() + " ₽";
+  document.getElementById("popup-image").style.backgroundImage = `url('${car.image}')`;
+
+  document.getElementById("form-car-name").value = car.name;
+  document.getElementById("form-car-price").value = car.price;
+
+  document.getElementById("car-popup").style.display = "flex";
+}
+
+function closePopup() {
+  document.getElementById("car-popup").style.display = "none";
+}
+
+function renderCatalog() {
+  const container = document.getElementById("car-container");
+  container.innerHTML = "";
+
+  const itemsPerPage = getItemsPerPage();
+  const filtered = currentBrand === "all" ? allCars : allCars.filter(c => c.brand === currentBrand);
+  const totalPages = Math.ceil(filtered.length / itemsPerPage);
+  const start = (currentPage - 1) * itemsPerPage;
+  const visibleCars = filtered.slice(start, start + itemsPerPage);
+
+  visibleCars.forEach((car, index) => {
+    const card = document.createElement("div");
+    card.className = "car-card";
+    card.style.animationDelay = `${index * 100}ms`;
+    card.onclick = () => openPopup(car);
+    card.innerHTML = `
+      <div class="car-image"><div class="loader"></div></div>
+      <div class="car-info">
+        <h3>${car.name}</h3>
+        <p><strong>Год:</strong> ${car.year}</p>
+        <p><strong>Пробег:</strong> ${car.mileage}</p>
+        <p class="price"><strong>${car.price.toLocaleString()} ₽</strong></p>
+      </div>
+    `;
+    const img = new Image();
+    img.src = car.image;
+    img.onload = () => {
+      card.querySelector('.car-image').style.backgroundImage = `url('${car.image}')`;
+      card.querySelector('.loader').style.display = 'none';
+  };
+    container.appendChild(card);
+});
+
+  const pagination = document.getElementById("pagination");
+  pagination.innerHTML = "";
+  if (totalPages > 1) {
+    for (let i = 1; i <= totalPages; i++) {
+      const link = document.createElement("a");
+      link.href = "#";
+      link.innerText = i;
+      link.className = i === currentPage ? "active" : "";
+      link.onclick = function(e) {
+        e.preventDefault();
+        currentPage = i;
+        renderCatalog();
+    };
+      pagination.appendChild(link);
+    }
+  }
+}
+
+
+renderCatalog();
+</script>
+
+<style>
+body {
+  margin: 0;
+  background: #292929;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
+
+.catalog-container {
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-start;
+}
+
+.sidebar {
+  width: 220px;
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 60vh;
+}
+
+.sidebar h3 {
+  text-align: center;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-weight: bold;
+}
+
+.catalog-title {
+  text-align: center;
+  font-size: 36px;
+  color: white;
+  margin: 40px 0 20px;
+  font-weight: bold;
+}
+
+.catalog-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.brand-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  scrollbar-width: thin;
+  max-height: 70vh;
+}
+
+.brand-list li {
+  padding: 6px 12px;
+  background: #333;
+  border-radius: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.brand-list li:hover,
+.brand-list li.active {
+  background: #f70000;
+  color: white;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.car-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.car-card {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards;
+  background: #1f1f1f;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
+}
+
+.car-image {
+  width: 100%;
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.car-info {
+  padding: 16px;
+}
+
+.car-info h3 {
+  margin: 0 0 10px;
+  font-size: 17px;
+  color: #fff;
+}
+
+.car-info p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.car-info .price {
+  color: #f70000;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.pagination {
+  margin-top: 30px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.pagination a {
+  background: #1f1f1f;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  min-width: 36px;
+  text-align: center;
+}
+
+.pagination a.active {
+  background: #f70000;
+  color: #fff;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.popup-image {
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+#order-form input {
+  width: 100%;
+  background: white !important;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+#order-form input:focus {
+  outline: none;
+  border-color: #f70000;
+}
+
+#order-form input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: black !important;
+}
+
+#order-form button {
+  width: 100%;
+  background-color: #f70000 !important;
+  color: white !important;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-sizing: border-box;
+}
+
+#order-form button:hover {
+  background-color: #d60000 !important;
+}
+
+@media (max-width: 768px) {
+  .catalog-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-height: none;
+    padding: 10px 0;
+    border-radius: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .sidebar h3 {
+    display: none;
+  }
+
+  .brand-list {
+    flex-direction: row;
+    max-height: none;
+    padding: 0 10px;
+  }
+
+  .brand-list li {
+    flex-shrink: 0;
+    font-size: 13px;
+    scroll-snap-align: start;
+  }
+
+  .car-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .car-card {
+    font-size: 12px;
+    border-radius: 10px;
+  }
+
+  .car-image {
+    height: 120px;
+  }
+
+  .car-info h3 {
+    font-size: 14px;
+  }
+
+  .car-info p {
+    font-size: 12px;
+  }
+
+  .car-info .price {
+    font-size: 14px;
+  }
+}
+</style>
+
+<!-- END: Sidebar Car Catalog -->

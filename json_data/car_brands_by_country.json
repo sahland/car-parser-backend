@@ -93,6 +93,36 @@
       "ZIL",
       "KamAZ",
       "Aurus"
+    ],
+    "United Kingdom": [
+      "Aston Martin",
+      "Bentley",
+      "Jaguar",
+      "Land Rover",
+      "Lotus",
+      "Mini",
+      "MG",
+      "Rolls-Royce"
+    ],
+    "South Korea": [
+      "Hyundai",
+      "Kia",
+      "Genesis",
+      "SsangYong"
+    ],
+    "Czech Republic": [
+      "Škoda"
+    ],
+    "Spain": [
+      "SEAT",
+      "Cupra"
+    ],
+    "India": [
+      "Tata",
+      "Mahindra"
+    ],
+    "Romania": [
+      "Dacia"
     ]
   },
   "all_brands": [
@@ -173,6 +203,24 @@
     "Polestar",
     "Renault",
     "Saab",
-    "Volvo"
+    "Volvo",
+    "Aston Martin",
+    "Bentley",
+    "Jaguar",
+    "Land Rover",
+    "Lotus",
+    "Mini",
+    "MG",
+    "Rolls-Royce",
+    "Hyundai",
+    "Kia",
+    "Genesis",
+    "SsangYong",
+    "Škoda",
+    "SEAT",
+    "Cupra",
+    "Tata",
+    "Mahindra",
+    "Dacia"
   ]
 }

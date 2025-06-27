@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Citroen/DS C4 Cactus",
+    "brand": "Citroën",
+    "year": "2020",
+    "price": 699300,
+    "price_krw": 999,
+    "krw_to_rub": 0.07,
+    "mileage": "· 70,694 км",
+    "fuel_type": "· Дизель",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture06/pic3946/39466744_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250418082408"
+  }
+]

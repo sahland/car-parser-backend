@@ -1,0 +1,16 @@
+[
+  {
+    "name": "닛산",
+    "brand": "Nissan",
+    "year": "",
+    "price": 273000,
+    "price_krw": 390,
+    "krw_to_rub": 0.07,
+    "mileage": "—",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "3.5",
+    "image": "—"
+  }
+]

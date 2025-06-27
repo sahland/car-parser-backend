@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Lincoln Continental 10th Generation",
+    "brand": "Lincoln",
+    "year": "2019",
+    "price": 1855000,
+    "price_krw": 2650,
+    "krw_to_rub": 0.07,
+    "mileage": "· 76,792 км",
+    "fuel_type": "Бензин",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture01/pic3901/39019492_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250211103811"
+  },
+  {
+    "name": "Lincoln Continental 10th Generation",
+    "brand": "Lincoln",
+    "year": "2019",
+    "price": 1855000,
+    "price_krw": 2650,
+    "krw_to_rub": 0.07,
+    "mileage": "· 76,792 км",
+    "fuel_type": "Бензин",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture01/pic3901/39019492_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250211103811"
+  },
+  {
+    "name": "Lincoln MKC",
+    "brand": "Lincoln",
+    "year": "2015",
+    "price": 623000,
+    "price_krw": 890,
+    "krw_to_rub": 0.07,
+    "mileage": "· 133,815 км",
+    "fuel_type": "Бензин",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture01/pic3981/39815721_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250610034003"
+  },
+  {
+    "name": "Lincoln Continental 10th Generation",
+    "brand": "Lincoln",
+    "year": "2019",
+    "price": 1609300,
+    "price_krw": 2299,
+    "krw_to_rub": 0.07,
+    "mileage": "· 73,068 км",
+    "fuel_type": "Бензин",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture04/pic3994/39941521_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250625084707"
+  }
+]

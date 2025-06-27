@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Cruze",
+    "brand": "Chevrolet",
+    "year": "2013",
+    "price": 217000,
+    "price_krw": 310,
+    "krw_to_rub": 0.07,
+    "mileage": "171",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://img.kbchachacha.com/IMG/carimg/l/img02/img2702/27023184_37982287952552624.jpeg?width=720"
+  }
+]

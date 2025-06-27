@@ -1,0 +1,16 @@
+[
+  {
+    "name": "지프",
+    "brand": "Jeep",
+    "year": "2014",
+    "price": 6930791000,
+    "price_krw": 9901130,
+    "krw_to_rub": 0.07,
+    "mileage": "036",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.4",
+    "image": "https://img.kbchachacha.com/IMG/carimg/l/img03/img2663/26633497_27092409917651486.jpeg?width=720"
+  }
+]

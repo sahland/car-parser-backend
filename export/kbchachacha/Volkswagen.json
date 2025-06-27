@@ -1,0 +1,16 @@
+[
+  {
+    "name": "K8",
+    "brand": "Volkswagen",
+    "year": "2024",
+    "price": 2870000,
+    "price_krw": 4100,
+    "krw_to_rub": 0.07,
+    "mileage": "347",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://img.kbchachacha.com/IMG/carimg/l/img02/img2702/27028593_38239479460275073.jpeg?width=720"
+  }
+]

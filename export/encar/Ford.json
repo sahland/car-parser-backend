@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Ford Explorer",
+    "brand": "Ford",
+    "year": "2018",
+    "price": 1155000,
+    "price_krw": 1650,
+    "krw_to_rub": 0.07,
+    "mileage": "· 137,156 км",
+    "fuel_type": "Бензин",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture05/pic3995/39950907_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250627073923"
+  },
+  {
+    "name": "Ford Mustang",
+    "brand": "Ford",
+    "year": "2023",
+    "price": 2303000,
+    "price_krw": 3290,
+    "krw_to_rub": 0.07,
+    "mileage": "· 41,327 км",
+    "fuel_type": "Бензин",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture08/pic3918/39180590_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250310033954"
+  },
+  {
+    "name": "Ford New Torus",
+    "brand": "Ford",
+    "year": "2014",
+    "price": 385000,
+    "price_krw": 550,
+    "krw_to_rub": 0.07,
+    "mileage": "· 111,892 км",
+    "fuel_type": "Бензин",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture06/pic3946/39467951_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250417044406"
+  },
+  {
+    "name": "Ford Mondeo 4th Generation",
+    "brand": "Ford",
+    "year": "2015",
+    "price": 343000,
+    "price_krw": 490,
+    "krw_to_rub": 0.07,
+    "mileage": "· 160,087 км",
+    "fuel_type": "· Дизель",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture03/pic3983/39835538_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250612033319"
+  },
+  {
+    "name": "Ford Explorer 6th generation",
+    "brand": "Ford",
+    "year": "2020",
+    "price": 2198000,
+    "price_krw": 3140,
+    "krw_to_rub": 0.07,
+    "mileage": "· 70,080 км",
+    "fuel_type": "· 가솔린",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture02/pic3982/39823770_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250611120712"
+  }
+]

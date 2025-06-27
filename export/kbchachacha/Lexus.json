@@ -1,0 +1,16 @@
+[
+  {
+    "name": "렉서스",
+    "brand": "Lexus",
+    "year": "2017",
+    "price": 3213000,
+    "price_krw": 4590,
+    "krw_to_rub": 0.07,
+    "mileage": "125",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "https://img.kbchachacha.com/IMG/carimg/l/img06/img2696/26963605_36771603311228761.jpg?width=720"
+  }
+]

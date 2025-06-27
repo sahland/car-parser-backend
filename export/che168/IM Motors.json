@@ -1,0 +1,30 @@
+[
+  {
+    "name": "LS6 2025 \n2024",
+    "brand": "IM Motors",
+    "year": "2024",
+    "price": 264000,
+    "price_yuan": 2.2,
+    "yuan_to_rub": 12,
+    "mileage": "22 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g26/M0A/73/49/640x480_c42_autohomecar__ChxkjmhahxaAPpRLAAnHO5ny9Ak429.jpg"
+  },
+  {
+    "name": "LS7 2023 100kWh Pro\n2023",
+    "brand": "IM Motors",
+    "year": "2023",
+    "price": 264000,
+    "price_yuan": 2.2,
+    "yuan_to_rub": 12,
+    "mileage": "22 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g26/M00/DB/51/640x480_c42_autohomecar__ChtlxWhbvnKABOthAAej8mIjVcQ426.jpg"
+  }
+]

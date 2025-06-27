@@ -1,16 +1,30 @@
 [
   {
-    "name": "XTS 2018 28T \n2018",
+    "name": "XT5 2025 2.0T",
     "brand": "Cadillac",
-    "year": "2018",
-    "price": 297600,
-    "price_yuan": 2.48,
+    "year": "2024",
+    "price": 1200,
+    "price_yuan": 0.01,
     "yuan_to_rub": 12,
-    "mileage": "71 000 км",
+    "mileage": "100 км",
     "fuel_type": "—",
     "power": "—",
     "drive": "—",
     "engine_volume": "2.0",
-    "image": "https://2sc2.autoimg.cn/escimg/auto/g28/M06/80/32/400x300_c42_autohomecar__CjIFVGgfam6AUxtqAAryG3SGVnM153.jpg"
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g25/M02/AA/0C/640x480_c42_autohomecar__ChtliGhT2MiAL_muAAG297_ty18299.jpg"
+  },
+  {
+    "name": "CT6 2023 28T \n2023",
+    "brand": "Cadillac",
+    "year": "2023",
+    "price": 84000,
+    "price_yuan": 0.7,
+    "yuan_to_rub": 12,
+    "mileage": "7 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g32/M02/39/74/640x480_c42_autohomecar__ChxkPWhbpnGASlpnAAjG2VrzJpI587.jpg"
   }
 ]

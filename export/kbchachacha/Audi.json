@@ -1,0 +1,16 @@
+[
+  {
+    "name": "아우디",
+    "brand": "Audi",
+    "year": "",
+    "price": 2001300,
+    "price_krw": 2859,
+    "krw_to_rub": 0.07,
+    "mileage": "—",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "—"
+  }
+]

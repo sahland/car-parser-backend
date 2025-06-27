@@ -1,16 +1,30 @@
 [
   {
-    "name": "C11 2023  500\n2023",
+    "name": "C10 2024 210\n2024",
     "brand": "Leapmotor",
-    "year": "2023",
-    "price": 308400,
-    "price_yuan": 2.57,
+    "year": "2024",
+    "price": 100800,
+    "price_yuan": 0.84,
     "yuan_to_rub": 12,
-    "mileage": "32 000 км",
+    "mileage": "8 400 км",
     "fuel_type": "—",
     "power": "—",
     "drive": "—",
     "engine_volume": "2.0",
-    "image": "https://2sc2.autoimg.cn/escimg/auto/g30/M0A/A8/2D/400x300_c42_autohomecar__ChxknGgfJNSALxUOAAlyl8Wg8a8208.jpg"
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g24/M0A/FF/36/640x480_c42_autohomecar__Chtk3WhbkiaAcUbmAAJUPIXftfo099.jpg"
+  },
+  {
+    "name": "C01 2023 525\n\n2023",
+    "brand": "Leapmotor",
+    "year": "2023",
+    "price": 204000,
+    "price_yuan": 1.7,
+    "yuan_to_rub": 12,
+    "mileage": "17 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g27/M09/CF/AA/640x480_c42_autohomecar__ChxkmWhXekOAPRG0AAawRCLHIyA120.jpg"
   }
 ]

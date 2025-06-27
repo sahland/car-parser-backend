@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Toyota RAV4 5th generation",
+    "brand": "Toyota",
+    "year": "2024",
+    "price": 2799300,
+    "price_krw": 3999,
+    "krw_to_rub": 0.07,
+    "mileage": "· 21,430 км",
+    "fuel_type": "· Бензин+электричество",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture04/pic3974/39741915_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250529053157"
+  },
+  {
+    "name": "Toyota Camry (XV70)",
+    "brand": "Toyota",
+    "year": "2018",
+    "price": 1603000,
+    "price_krw": 2290,
+    "krw_to_rub": 0.07,
+    "mileage": "· 60,645 км",
+    "fuel_type": "· Бензин+электричество",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture02/pic3972/39720391_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250527041924"
+  },
+  {
+    "name": "Toyota RAV4 5th generation",
+    "brand": "Toyota",
+    "year": "2024",
+    "price": 2799300,
+    "price_krw": 3999,
+    "krw_to_rub": 0.07,
+    "mileage": "· 21,430 км",
+    "fuel_type": "· Бензин+электричество",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture04/pic3974/39741915_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250529053157"
+  },
+  {
+    "name": "Toyota RAV4 5th generation",
+    "brand": "Toyota",
+    "year": "2024",
+    "price": 2799300,
+    "price_krw": 3999,
+    "krw_to_rub": 0.07,
+    "mileage": "· 21,430 км",
+    "fuel_type": "· Бензин+электричество",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture04/pic3974/39741915_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250529053157"
+  },
+  {
+    "name": "Toyota Camry (XV70)",
+    "brand": "Toyota",
+    "year": "2018",
+    "price": 1603000,
+    "price_krw": 2290,
+    "krw_to_rub": 0.07,
+    "mileage": "· 60,645 км",
+    "fuel_type": "· Бензин+электричество",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture02/pic3972/39720391_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20250527041924"
+  }
+]

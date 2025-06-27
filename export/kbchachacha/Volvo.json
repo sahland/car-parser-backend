@@ -1,0 +1,16 @@
+[
+  {
+    "name": "볼보",
+    "brand": "Volvo",
+    "year": "2020",
+    "price": 2303000,
+    "price_krw": 3290,
+    "krw_to_rub": 0.07,
+    "mileage": "939",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "https://img.kbchachacha.com/IMG/carimg/l/img06/img2686/26867658_34109510084269692.jpeg?width=720"
+  }
+]

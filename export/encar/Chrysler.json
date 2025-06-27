@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Chrysler The New 300C",
+    "brand": "Chrysler",
+    "year": "2012",
+    "price": 1155000,
+    "price_krw": 1650,
+    "krw_to_rub": 0.07,
+    "mileage": "· 131,126 км",
+    "fuel_type": "Бензин",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture08/pic3878/38782703_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20241227083116"
+  }
+]

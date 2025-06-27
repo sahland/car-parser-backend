@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Jaguar New XF",
+    "brand": "Jaguar",
+    "year": "2015",
+    "price": 525000,
+    "price_krw": 750,
+    "krw_to_rub": 0.07,
+    "mileage": "· 83,552 км",
+    "fuel_type": "· Дизель",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "http://ci.encar.com/carpicture/carpicture01/pic3741/37418778_001.jpg?impolicy=heightRate&rh=192&cw=320&ch=192&cg=Center&wtmk=http://ci.encar.com/wt_mark/w_mark_04.png&wtmkg=SouthEast&wtmkw=70&wtmkh=30&t=20240513103745"
+  }
+]

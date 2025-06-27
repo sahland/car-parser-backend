@@ -1,0 +1,58 @@
+[
+  {
+    "name": "미니",
+    "brand": "Mini",
+    "year": "2022",
+    "price": 1953000,
+    "price_krw": 2790,
+    "krw_to_rub": 0.07,
+    "mileage": "572",
+    "fuel_type": "Electric",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "—",
+    "image": "https://img.kbchachacha.com/IMG/carimg/l/img09/img2709/27092237_39530328349748518.jpeg?width=720"
+  },
+  {
+    "name": "미니",
+    "brand": "Mini",
+    "year": "2023",
+    "price": 2023000,
+    "price_krw": 2890,
+    "krw_to_rub": 0.07,
+    "mileage": "402",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://img.kbchachacha.com/IMG/carimg/l/img04/img2704/27044435_38435891366885112.jpeg?width=720"
+  },
+  {
+    "name": "미니",
+    "brand": "Mini",
+    "year": "2020",
+    "price": 1771000,
+    "price_krw": 2530,
+    "krw_to_rub": 0.07,
+    "mileage": "922",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://img.kbchachacha.com/IMG/carimg/l/img07/img2697/26971919_36445130610661551.jpeg?width=720"
+  },
+  {
+    "name": "미니",
+    "brand": "Mini",
+    "year": "2023",
+    "price": 16731876000,
+    "price_krw": 23902680,
+    "krw_to_rub": 0.07,
+    "mileage": "659",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "1.5",
+    "image": "https://img.kbchachacha.com/IMG/carimg/l/img08/img2678/26781481_31433603855460622.jpg?width=720"
+  }
+]

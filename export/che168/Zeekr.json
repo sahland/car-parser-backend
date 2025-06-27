@@ -1,0 +1,30 @@
+[
+  {
+    "name": "001 2022  WE\n2022",
+    "brand": "Zeekr",
+    "year": "2022",
+    "price": 420000,
+    "price_yuan": 3.5,
+    "yuan_to_rub": 12,
+    "mileage": "35 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g25/M08/A9/D6/640x480_c42_autohomecar__CjIFV2hc4o2AQxR0AAJJfu-iNN4945.jpg"
+  },
+  {
+    "name": "001 2024 ME 100kWh \n2024",
+    "brand": "Zeekr",
+    "year": "2024",
+    "price": 240000,
+    "price_yuan": 2.0,
+    "yuan_to_rub": 12,
+    "mileage": "20 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g30/M08/A8/FD/640x480_c42_autohomecar__CjIFU2haJIKAarpaAAUzlj3jVpY489.jpg"
+  }
+]

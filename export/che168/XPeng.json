@@ -1,16 +1,30 @@
 [
   {
-    "name": "X9 2024 610Pro\n2024",
+    "name": "G9 2025 725  Max\n2025",
     "brand": "XPeng",
-    "year": "2024",
-    "price": 931200,
-    "price_yuan": 7.76,
+    "year": "2025",
+    "price": 9600,
+    "price_yuan": 0.08,
     "yuan_to_rub": 12,
-    "mileage": "8 700 км",
+    "mileage": "800 км",
     "fuel_type": "—",
     "power": "—",
     "drive": "—",
     "engine_volume": "2.0",
-    "image": "https://2sc2.autoimg.cn/escimg/auto/g30/M04/ED/5D/400x300_c42_autohomecar__CjIFU2fTqRSAcG-bAAYmBH5EfUk405.jpg"
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g26/M04/61/94/640x480_c42_autohomecar__ChxkjmhVCDKAPStZAAPS2jqZTmA904.jpg"
+  },
+  {
+    "name": "MONA M03 2025 600  Max\n2025",
+    "brand": "XPeng",
+    "year": "2025",
+    "price": 12000,
+    "price_yuan": 0.1,
+    "yuan_to_rub": 12,
+    "mileage": "1 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g28/M05/4A/FA/640x480_c42_autohomecar__CjIFVGhczy-Ae8mlAAsSAm8jO_Y176.jpg"
   }
 ]

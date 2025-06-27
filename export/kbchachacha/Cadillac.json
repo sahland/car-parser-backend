@@ -1,0 +1,16 @@
+[
+  {
+    "name": "캐딜락",
+    "brand": "Cadillac",
+    "year": "",
+    "price": 1995000,
+    "price_krw": 2850,
+    "krw_to_rub": 0.07,
+    "mileage": "—",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0Turbo",
+    "image": "—"
+  }
+]

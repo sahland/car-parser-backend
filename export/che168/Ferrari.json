@@ -1,58 +1,16 @@
 [
   {
-    "name": "458 2011 4.5L Italia\n2013",
+    "name": "458 2011 4.5L Italia\n2011",
     "brand": "Ferrari",
-    "year": "2013",
-    "price": 7380000,
-    "price_yuan": 61.5,
+    "year": "2011",
+    "price": 744000,
+    "price_yuan": 6.2,
     "yuan_to_rub": 12,
-    "mileage": "24 000 км",
+    "mileage": "62 000 км",
     "fuel_type": "—",
     "power": "—",
     "drive": "—",
     "engine_volume": "2.0",
-    "image": "https://2sc2.autoimg.cn/escimg/auto/g26/M0B/23/33/400x300_c42_autohomecar__CjIFVmgPNRuASficAA2koe7su4Q002.jpg"
-  },
-  {
-    "name": "488 2015 488 GTB\n2019",
-    "brand": "Ferrari",
-    "year": "2019",
-    "price": 5480400,
-    "price_yuan": 45.67,
-    "yuan_to_rub": 12,
-    "mileage": "30 000 км",
-    "fuel_type": "—",
-    "power": "—",
-    "drive": "—",
-    "engine_volume": "2.0",
-    "image": "https://2sc2.autoimg.cn/escimg/auto/g31/M01/3B/05/400x300_c42_autohomecar__ChxoHmfPzDSAeKnXAAJ6qEkXY5M225.jpg"
-  },
-  {
-    "name": "F8 2019 Tributo 3.9T V8\n2022",
-    "brand": "Ferrari",
-    "year": "2022",
-    "price": 8632800,
-    "price_yuan": 71.94,
-    "yuan_to_rub": 12,
-    "mileage": "4 700 км",
-    "fuel_type": "—",
-    "power": "—",
-    "drive": "—",
-    "engine_volume": "2.0",
-    "image": "https://2sc2.autoimg.cn/escimg/auto/g26/M00/7A/28/400x300_c42_autohomecar__ChxkjmgLPTyADMrwAAFU067Xh-w988.jpg"
-  },
-  {
-    "name": "599 2006 599 GTB Fiorano 6.0\n2008",
-    "brand": "Ferrari",
-    "year": "2008",
-    "price": 5976000,
-    "price_yuan": 49.8,
-    "yuan_to_rub": 12,
-    "mileage": "90 000 км",
-    "fuel_type": "—",
-    "power": "—",
-    "drive": "—",
-    "engine_volume": "2.0",
-    "image": "https://2sc2.autoimg.cn/escimg/auto/g32/M0B/01/F8/400x300_c42_autohomecar__ChxkPmgJ6qqAE4cxAAJOlFvZLZE179.jpg"
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g26/M00/DE/D1/400x300_c42_autohomecar__ChxkjmgwO36AURGEAAG9vjpwNXI705.jpg"
   }
 ]

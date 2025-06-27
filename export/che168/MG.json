@@ -1,0 +1,30 @@
+[
+  {
+    "name": "AMG GT 2019 AMG GT 50 \n2019",
+    "brand": "MG",
+    "year": "2019",
+    "price": 300000,
+    "price_yuan": 2.5,
+    "yuan_to_rub": 12,
+    "mileage": "25 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g30/M08/6A/EA/640x480_c42_autohomecar__ChxknGhasJSAb316AAIOlaC4gVU440.jpg"
+  },
+  {
+    "name": "AMG GT 2016 AMG GT\n2016",
+    "brand": "MG",
+    "year": "2016",
+    "price": 1080000,
+    "price_yuan": 9.0,
+    "yuan_to_rub": 12,
+    "mileage": "90 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g31/M04/F1/40/640x480_c42_autohomecar__ChxoHmhbuvSASNp3AAIcfZqXtwI762.jpg"
+  }
+]

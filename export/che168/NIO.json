@@ -1,16 +1,30 @@
 [
   {
-    "name": "ES8 2023 75kWh\n\n2024",
+    "name": "ES6 2024 75kWh\n2024",
     "brand": "NIO",
     "year": "2024",
-    "price": 934800,
-    "price_yuan": 7.79,
+    "price": 57600,
+    "price_yuan": 0.48,
     "yuan_to_rub": 12,
-    "mileage": "48 000 км",
+    "mileage": "4 800 км",
     "fuel_type": "—",
     "power": "—",
     "drive": "—",
     "engine_volume": "2.0",
-    "image": "https://2sc2.autoimg.cn/escimg/auto/g30/M06/60/9D/400x300_c42_autohomecar__Chtk2GgQYfGAdmQ8AA8s_xbyUlg527.jpg"
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g32/M0A/35/A6/640x480_c42_autohomecar__Chtk2WhabryAYIKGAAGN_5dX5fw287.jpg"
+  },
+  {
+    "name": "ET5T 2024 100kWh Touring\n2025",
+    "brand": "NIO",
+    "year": "2025",
+    "price": 36000,
+    "price_yuan": 0.3,
+    "yuan_to_rub": 12,
+    "mileage": "3 000 км",
+    "fuel_type": "—",
+    "power": "—",
+    "drive": "—",
+    "engine_volume": "2.0",
+    "image": "https://2sc2.autoimg.cn/escimg/auto/g24/M01/E5/2D/640x480_c42_autohomecar__Chtk3WhToA6AYPgLAA2IWjGDSBk178.jpg"
   }
 ]
